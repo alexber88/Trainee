@@ -11,6 +11,7 @@ use Core\LoggerAbstract\LoggerAbstract;
 
 class LogToFile extends LoggerAbstract
 {
+    const LOG_FILE = 'logs.txt';
     protected function _writeMsg($message, $type)
     {
         if(!$message)
@@ -18,9 +19,9 @@ class LogToFile extends LoggerAbstract
             return "Error! Empty message<br/>";
         }
         $message = date('Y-m-d H:i:s').' - '.' '.$type.': '.$message."\r\n";
-        if(file_put_contents($this->file, $message, FILE_APPEND))
+        if(file_put_contents(self::LOG_FILE, $message, FILE_APPEND))
         {
-            return "Written $type to the file $this->file<br/>";
+            return "Written $type to the file ".self::LOG_FILE."<br/>";
         }
         else
         {

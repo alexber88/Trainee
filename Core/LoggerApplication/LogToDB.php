@@ -26,6 +26,7 @@ class LogToDB extends LoggerAbstract
         {
             return "Error! Empty message<br/>";
         }
+
         $statement = $this->connection->prepare("INSERT INTO `log` (`message`, `type`, `creation_date`) values (?, ?, ?)");
 
         if($inserted = $statement->execute([$message, $type, date('Y-m-d H:i:s')]))
@@ -36,5 +37,10 @@ class LogToDB extends LoggerAbstract
         {
             return "Error writing $type to DB<br/>";
         }
+    }
+
+    public function __destruct()
+    {
+        $this->connection = null;
     }
 }

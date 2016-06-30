@@ -1,6 +1,0 @@
-2016-06-30 15:28:12 -  Notice: this is notice
-2016-06-30 15:28:12 -  Warning: this is warning
-2016-06-30 15:28:12 -  Error: this is error
-2016-06-30 16:11:57 -  Notice: this is notice
-2016-06-30 16:11:57 -  Warning: this is warning
-2016-06-30 16:11:57 -  Error: this is error

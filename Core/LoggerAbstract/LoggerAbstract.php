@@ -10,7 +10,6 @@ use Core\LoggerInterface\LoggerInterface;
 
 abstract class LoggerAbstract implements LoggerInterface
 {
-    public $file = 'Logs/Logs.txt';
     public $result = '';
 
     /**

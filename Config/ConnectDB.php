@@ -26,7 +26,6 @@ class ConnectDB
             if(!isset($this->connection)){
                 $this->connection = new \PDO($this->_dbh, $this->_user, $this->_password);
             }
-
         }
         catch (\PDOException $e)
         {
@@ -39,5 +38,10 @@ class ConnectDB
     {
         $dbInfo = require_once 'Config/db-info.php';
         return $dbInfo;
+    }
+
+    public function __destruct()
+    {
+        $this->connection = null;
     }
 }
