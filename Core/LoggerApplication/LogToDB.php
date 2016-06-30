@@ -7,7 +7,7 @@
  */
 namespace Core\LoggerApplication;
 use Core\LoggerAbstract\LoggerAbstract;
-use ConnectDB\ConnectDB as ConnectDB;
+use Config\ConnectDB as ConnectDB;
 
 class LogToDB extends LoggerAbstract
 {

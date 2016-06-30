@@ -12,6 +12,13 @@ abstract class LoggerAbstract implements LoggerInterface
 {
     public $file = 'Logs/Logs.txt';
     public $result = '';
+
+    /**
+     * Write message
+     *
+     * @param string $message
+     * @param string $type
+     */
     abstract protected function _writeMsg($message, $type);
 
     public function notice($message, $type)
