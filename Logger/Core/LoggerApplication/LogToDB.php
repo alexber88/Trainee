@@ -5,9 +5,9 @@
  * Date: 30.06.16
  * Time: 10:07
  */
-namespace Core\LoggerApplication;
-use Core\LoggerAbstract\LoggerAbstract;
-use Config\ConnectDB as ConnectDB;
+namespace Logger\Core\LoggerApplication;
+use Logger\Core\LoggerAbstract\LoggerAbstract;
+use Logger\Config\ConnectDB;
 
 class LogToDB extends LoggerAbstract
 {

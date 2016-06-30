@@ -3,8 +3,8 @@ error_reporting(E_ALL | E_STRICT) ;
 ini_set('display_errors', 'On');
 require_once 'Autoload.php';
 
-use Core\LoggerApplication\LogToFile;
-use Core\LoggerApplication\LogToDB;
+use Logger\Core\LoggerApplication\LogToFile;
+use Logger\Core\LoggerApplication\LogToDB;
 
 $logToFile = new LogToFile();
 $logToFile->notice('this is notice', LogToFile::NOTICE);

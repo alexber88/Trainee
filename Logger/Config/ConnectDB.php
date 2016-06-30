@@ -6,7 +6,7 @@
  * Time: 0:22
  */
 
-namespace Config;
+namespace Logger\Config;
 
 class ConnectDB
 {
@@ -36,7 +36,7 @@ class ConnectDB
 
     private function getDatabaseInfo()
     {
-        $dbInfo = require_once 'Config/db-info.php';
+        $dbInfo = require_once __DIR__.'/db-info.php';
         return $dbInfo;
     }
 
