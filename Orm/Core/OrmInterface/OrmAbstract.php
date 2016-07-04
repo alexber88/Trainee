@@ -15,7 +15,8 @@ abstract class OrmAbstract implements OrmInterface
 {
     private $_tableName;
     private $_connect;
-    private $_idField;
+    private $_deleted = FALSE;
+    protected $_idField;
     protected $_id;
     
     public function __construct(\PDO $connect, $tableName, $idField)
@@ -69,6 +70,7 @@ abstract class OrmAbstract implements OrmInterface
         $statement->bindParam(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
         $this->_id = null;
+        $this->_deleted = TRUE;
     }
 
     public function load($id)
@@ -116,7 +118,7 @@ abstract class OrmAbstract implements OrmInterface
             $statement->execute();
 
         }
-        else
+        elseif(!$this->_deleted)
         {
             $fields = implode(', ', array_keys($entity));
             $values = implode(', ', array_fill(0, count($entity), '?'));

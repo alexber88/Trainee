@@ -12,15 +12,13 @@ use Orm\Core\OrmInterface\OrmAbstract;
 
 class User extends OrmAbstract
 {
-    private $_tableName = 'user';
-    private $_idField = 'id';
     private $_email;
     private $_name;
     private $_addDate;
 
     public function __construct(\PDO $connect)
     {
-        parent::__construct($connect, $this->_tableName, $this->_idField);
+        parent::__construct($connect, 'user', 'id');
     }
 
     /**
