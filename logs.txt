@@ -1,3 +1,4 @@
-2016-06-30 23:43:06 -  Notice: this is notice
-2016-06-30 23:43:06 -  Warning: this is warning
-2016-06-30 23:43:06 -  Error: this is error
+
+2016-07-04 09:59:14 -  Notice: this is notice
+2016-07-04 09:59:14 -  Warning: this is warning
+2016-07-04 09:59:14 -  Error: this is error

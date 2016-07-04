@@ -5,8 +5,8 @@
  * Date: 30.06.16
  * Time: 10:06
  */
-namespace Logger\Core\LoggerApplication;
-use Logger\Core\LoggerAbstract\LoggerAbstract;
+namespace Logger\App;
+use Logger\Core\LoggerInterface\LoggerAbstract;
 
 
 class LogToFile extends LoggerAbstract

@@ -5,18 +5,18 @@
  * Date: 30.06.16
  * Time: 10:07
  */
-namespace Logger\Core\LoggerApplication;
-use Logger\Core\LoggerAbstract\LoggerAbstract;
-use Logger\Config\ConnectDB;
+namespace Logger\App;
+use Logger\Core\LoggerInterface\LoggerAbstract;
+//use Logger\Config\ConnectDB;
 
 class LogToDB extends LoggerAbstract
 {
-    public function __construct()
+    public function __construct(\PDO $connect)
     {
         if(!isset($this->connection))
         {
-            $connect = new ConnectDB();
-            $this->connection = $connect->connection;
+//            $connect = new ConnectDB();
+            $this->connection = $connect;
         }
     }
 
