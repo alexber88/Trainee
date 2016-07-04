@@ -94,45 +94,36 @@ abstract class OrmAbstract implements OrmInterface
     public function save()
     {
         $entity = $this->getFieldsAndValues();
+        $data = [];
 
         if(isset($entity[$this->_idField]) && $entity[$this->_idField] != null)
         {
-
-            $id = $entity[$this->_idField];
-            unset($entity[$this->_idField]);
-            $data = [];
             foreach ($entity as $field => $value)
             {
-                $data[] = $field.' = ?';
+                $data[] = $field.' = :'.$field;
             }
             $values = implode(', ', $data);
-            $query = "UPDATE $this->_tableName SET $values WHERE $this->_idField = ?";
-            $statement = $this->_connect->prepare($query);
-            $i = 1;
-            foreach ($entity as &$value)
-            {
-                $statement->bindParam($i, $value);
-                $i++;
-            }
-            $statement->bindParam($i, $id);
-            $statement->execute();
-
+            $query = "UPDATE $this->_tableName SET $values WHERE $this->_idField = :id";
         }
         elseif(!$this->_deleted)
         {
             $fields = implode(', ', array_keys($entity));
-            $values = implode(', ', array_fill(0, count($entity), '?'));
-            $query = "INSERT INTO $this->_tableName($fields) VALUES($values)";
-            $statement = $this->_connect->prepare($query);
-            $i = 1;
-            foreach ($entity as &$value)
+            foreach ($entity as $field => $value)
             {
-                $statement->bindParam($i, $value);
-                $i++;
+                $data[] = ':'.$field;
             }
+            $values = implode(', ', $data);
+            $query = "INSERT INTO $this->_tableName($fields) VALUES($values)";
+        }
 
-            $statement->execute();
-
+        $statement = $this->_connect->prepare($query);
+        foreach ($entity as $field => &$value)
+        {
+            $statement->bindParam(':'.$field, $value);
+        }
+        $statement->execute();
+        if(!$this->_id)
+        {
             $this->_id = $this->_connect->lastInsertId();
         }
     }
