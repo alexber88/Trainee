@@ -115,17 +115,20 @@ abstract class OrmAbstract implements OrmInterface
             $values = implode(', ', $data);
             $query = "INSERT INTO $this->_tableName($fields) VALUES($values)";
         }
+        if(isset($query))
+        {
+            $statement = $this->_connect->prepare($query);
+            foreach ($entity as $field => &$value)
+            {
+                $statement->bindParam(':'.$field, $value);
+            }
+            $statement->execute();
+            if(!$this->_id)
+            {
+                $this->_id = $this->_connect->lastInsertId();
+            }
+        }
 
-        $statement = $this->_connect->prepare($query);
-        foreach ($entity as $field => &$value)
-        {
-            $statement->bindParam(':'.$field, $value);
-        }
-        $statement->execute();
-        if(!$this->_id)
-        {
-            $this->_id = $this->_connect->lastInsertId();
-        }
     }
 
     public function delete()
