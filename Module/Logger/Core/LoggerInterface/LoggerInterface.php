@@ -6,7 +6,7 @@
  * Time: 9:22
  */
 
-namespace Logger\Core\LoggerInterface;
+namespace Logger\LoggerInterface;
 
 interface LoggerInterface
 {

@@ -8,8 +8,8 @@
 
 
 
-namespace Orm\Core\OrmInterface;
-use Orm\Core\OrmInterface\OrmInterface;
+namespace Orm;
+use Orm\OrmInterface;
 
 abstract class OrmAbstract implements OrmInterface
 {
@@ -91,11 +91,12 @@ abstract class OrmAbstract implements OrmInterface
         $statement = $this->_connect->prepare($query);
         $statement->bindParam(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
-        $result = $statement->fetch(\PDO::FETCH_ASSOC);
-
-        foreach ($result as $field => $value)
+        if($result = $statement->fetch(\PDO::FETCH_ASSOC))
         {
-            $this->_data[$field] = $value;
+            foreach ($result as $field => $value)
+            {
+                $this->_data[$field] = $value;
+            }
         }
     }
 
@@ -115,7 +116,7 @@ abstract class OrmAbstract implements OrmInterface
 
 
     /**
-     * Insert new row to the table
+     * Insert new row into the table
      *
      * @return void
      */

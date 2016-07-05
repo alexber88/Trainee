@@ -6,12 +6,18 @@
  * Time: 15:52
  */
 
-namespace Orm\App;
 
-use Orm\Core\OrmInterface\OrmAbstract;
+namespace Model;
+
+use Orm\OrmAbstract;
 
 class User extends OrmAbstract
 {
+    protected $_data = [
+        'name' => '',
+        'email' => '',
+        'add_date' => ''
+    ];
     public function __construct(\PDO $connect)
     {
         parent::__construct($connect, 'user', 'id');

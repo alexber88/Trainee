@@ -7,7 +7,7 @@
  */
 
 
-namespace Orm\Core\OrmInterface;
+namespace Orm;
 
 
 interface OrmInterface

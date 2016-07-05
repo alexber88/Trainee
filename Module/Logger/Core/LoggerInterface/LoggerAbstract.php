@@ -5,8 +5,8 @@
  * Date: 30.06.16
  * Time: 9:26
  */
-namespace Logger\Core\LoggerInterface;
-use Logger\Core\LoggerInterface\LoggerInterface;
+namespace Logger\LoggerInterface;
+use Logger\LoggerInterface\LoggerInterface;
 
 abstract class LoggerAbstract implements LoggerInterface
 {
