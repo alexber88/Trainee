@@ -6,8 +6,10 @@
  * Time: 0:20
  */
 
-class Manage {
-    public static function autoload($class) {
+class Manage
+{
+    public static function autoload($class)
+    {
         $class = str_replace('\\', '/', $class);
         include $class . '.php';
     }

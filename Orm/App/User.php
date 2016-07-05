@@ -12,13 +12,10 @@ use Orm\Core\OrmInterface\OrmAbstract;
 
 class User extends OrmAbstract
 {
-    private $_email;
-    private $_name;
-    private $_addDate;
-
     public function __construct(\PDO $connect)
     {
         parent::__construct($connect, 'user', 'id');
+        $this->_data['add_date'] = date('Y-m-d H:i:s');
     }
 
     /**
@@ -27,7 +24,7 @@ class User extends OrmAbstract
      */
     public function getName()
     {
-        return $this->_name;
+        return $this->_data['name'];
     }
 
     /**
@@ -36,7 +33,7 @@ class User extends OrmAbstract
      */
     public function setName($name)
     {
-        $this->_name = $name;
+        $this->_data['name'] = $name;
     }
 
     /**
@@ -45,7 +42,7 @@ class User extends OrmAbstract
      */
     public function getEmail()
     {
-        return $this->_email;
+        return $this->_data['email'];
     }
 
     /**
@@ -54,32 +51,6 @@ class User extends OrmAbstract
      */
     public function setEmail($email)
     {
-        $this->_email = $email;
+        $this->_data['email'] = $email;
     }
-
-    protected function setProperties($result)
-    {
-        $this->_name = $result['name'];
-        $this->_email = $result['email'];
-        $this->_addDate = $result['add_date'];
-    }
-    
-    protected function getFieldsAndValues()
-    {
-
-        if($this->_id)
-        {
-            $user = [$this->_idField => $this->_id];
-        }
-        else
-        {
-            $user = ['add_date' => date('Y-m-d H:i:s')];
-        }
-
-        $user['name'] = $this->_name;
-        $user['email'] = $this->_email;
-        
-        return $user;
-    }
-
 }

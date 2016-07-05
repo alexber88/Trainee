@@ -13,12 +13,17 @@ use Orm\Core\OrmInterface\OrmInterface;
 
 abstract class OrmAbstract implements OrmInterface
 {
+    protected $_data = [];
     private $_tableName;
     private $_connect;
-    private $_deleted = FALSE;
     protected $_idField;
-    protected $_id;
-    
+
+    /**
+     * OrmAbstract constructor. Set DB connection, table name and the name of primary key field
+     * @param \PDO $connect
+     * @param string $tableName
+     * @param string $idField
+     */
     public function __construct(\PDO $connect, $tableName, $idField)
     {
         $this->_connect = $connect;
@@ -27,24 +32,58 @@ abstract class OrmAbstract implements OrmInterface
     }
 
     /**
-     * Set properties to object as table fields
-     * @param $result array
-     * @return void
+     * @inheritdoc
      */
-    abstract protected function setProperties($result);
-
+    public function load($id)
+    {
+        $this->_getById($id);
+    }
 
     /**
-     * Get properties, named as table fields, from the current object
-     * @return array
+     * @inheritdoc
      */
-    abstract protected function getFieldsAndValues();
-
+    public function getId()
+    {
+        if($this->_data[$this->_idField])
+        {
+            return $this->_data[$this->_idField];
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     /**
-     * Find record in table by id
+     * @inheritdoc
+     */
+    public function save()
+    {
+        if(isset($this->_data[$this->_idField]) && !empty($this->_data))
+        {
+            $this->_updateRow();
+        }
+        elseif(!isset($this->_data[$this->_idField]) && !empty($this->_data))
+        {
+            $this->_insertRow();
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function delete()
+    {
+        if($this->_data[$this->_idField])
+        {
+            $this->_delById($this->_data[$this->_idField]);
+        }
+    }
+
+    /**
+     * Find record in the table by id
      * @param $id int
-     * @return array
+     * @return void
      */
     private function _getById($id)
     {
@@ -53,13 +92,15 @@ abstract class OrmAbstract implements OrmInterface
         $statement->bindParam(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
         $result = $statement->fetch(\PDO::FETCH_ASSOC);
-        $this->_id = $result[$this->_idField];
-        return $result;
+
+        foreach ($result as $field => $value)
+        {
+            $this->_data[$field] = $value;
+        }
     }
 
-
     /**
-     * Delete record from table by id
+     * Delete record from the table by id
      * @param $id int
      * @return void
      */
@@ -69,74 +110,58 @@ abstract class OrmAbstract implements OrmInterface
         $statement = $this->_connect->prepare($query);
         $statement->bindParam(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
-        $this->_id = null;
-        $this->_deleted = TRUE;
+        $this->_data = [];
     }
 
-    public function load($id)
+
+    /**
+     * Insert new row to the table
+     *
+     * @return void
+     */
+    private function _insertRow()
     {
-        $result = $this->_getById($id);
-        $this->setProperties($result);
+        $fieldNames = array_keys($this->_data);
+        $fields = implode(', ', $fieldNames);
+        $values = implode(', ', array_map(function ($field){
+            return ':'.$field;
+        }, $fieldNames));
+        $query = "INSERT INTO $this->_tableName($fields) VALUES($values)";
+        $this->_prepareAndExecute($query);
+        $this->_data[$this->_idField] = $this->_connect->lastInsertId();
     }
 
-    public function getId()
+    /**
+     * Update row in the table
+     *
+     * @return void
+     */
+    private function _updateRow()
     {
-        if($this->_id)
-        {
-            return $this->_id;
-        }
-        else
-        {
-            return null;
-        }
+        $fieldNames = array_keys($this->_data);
+        $values = implode(', ', array_map(function ($field){
+            if($field != $this->_data[$this->_idField])
+            {
+                return $field. '= :'.$field;
+            }
+
+        }, $fieldNames));
+        $query = "UPDATE $this->_tableName SET $values WHERE $this->_idField = :id";
+        $this->_prepareAndExecute($query);
     }
 
-    public function save()
+    /**
+     * Prepare and execute query
+     *
+     * @return void
+     */
+    private function _prepareAndExecute($query)
     {
-        $entity = $this->getFieldsAndValues();
-        $data = [];
-
-        if(isset($entity[$this->_idField]) && $entity[$this->_idField] != null)
+        $statement = $this->_connect->prepare($query);
+        foreach ($this->_data as $field => &$value)
         {
-            foreach ($entity as $field => $value)
-            {
-                $data[] = $field.' = :'.$field;
-            }
-            $values = implode(', ', $data);
-            $query = "UPDATE $this->_tableName SET $values WHERE $this->_idField = :id";
+            $statement->bindParam(':'.$field, $value);
         }
-        elseif(!$this->_deleted)
-        {
-            $fields = implode(', ', array_keys($entity));
-            foreach ($entity as $field => $value)
-            {
-                $data[] = ':'.$field;
-            }
-            $values = implode(', ', $data);
-            $query = "INSERT INTO $this->_tableName($fields) VALUES($values)";
-        }
-        if(isset($query))
-        {
-            $statement = $this->_connect->prepare($query);
-            foreach ($entity as $field => &$value)
-            {
-                $statement->bindParam(':'.$field, $value);
-            }
-            $statement->execute();
-            if(!$this->_id)
-            {
-                $this->_id = $this->_connect->lastInsertId();
-            }
-        }
-
+        $statement->execute();
     }
-
-    public function delete()
-    {
-        if($this->_id)
-        {
-            $this->_delById($this->_id);
-        }
-    }
-
 }
