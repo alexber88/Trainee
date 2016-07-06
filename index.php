@@ -30,7 +30,7 @@ $connect = new Connection();
 //$logToFile->warning('this is warning', LogToFile::WARNING);
 //$logToFile->error('this is error', LogToFile::ERROR);
 ////
-//$logToDb = new LogToDB($connect->connection);
+//$logToDb = new LogToDB($connect->getConnection());
 //$logToDb->notice('this is notice', LogToDB::NOTICE);
 //$logToDb->notice('this is warning', LogToDB::WARNING);
 //$logToDb->notice('this is error', LogToDB::ERROR);
@@ -40,7 +40,7 @@ $connect = new Connection();
 //--------------Launch ORM--------------------------
 
 
-$user1 = new User($connect->connection);
+$user1 = new User($connect->getConnection());
 $user1->load(29);
 ////
 //

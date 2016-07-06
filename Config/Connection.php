@@ -15,6 +15,9 @@ class Connection
     private $_user = '';
     private $_pass = '';
 
+    private $_connection;
+
+
     public function __construct()
     {
         $dbInfo = $this->_getDbInfo();
@@ -23,24 +26,30 @@ class Connection
         $this->_pass = $dbInfo['password'];
         try
         {
-            if(!isset($this->connection))
+            if(!isset($this->_connection))
             {
-                $this->connection = new \PDO($this->_dsn, $this->_user, $this->_pass);
+                $this->_connection = new \PDO($this->_dsn, $this->_user, $this->_pass);
             }
-        } catch (\PDOException $e)
+        }
+        catch (\PDOException $e)
         {
             echo 'Unable to connect: ' . $e->getMessage();
         }
 
     }
 
-    private function _getDbInfo()
+    public function getConnection()
     {
-        return require_once 'db-info.php';
+        return $this->_connection;
     }
 
     public function __destruct()
     {
-        $this->connection = NULL;
+        $this->_connection = NULL;
+    }
+
+    private function _getDbInfo()
+    {
+        return require_once 'db-info.php';
     }
 }
