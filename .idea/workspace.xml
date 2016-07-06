@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Config/db-info.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config/Connection.php" afterPath="$PROJECT_DIR$/Config/Connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-    </list>
+    <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="" />
     <ignored path="loggertest.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -27,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="475">
+              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding>
                 <element signature="e#76#98#0#PHP" expanded="true" />
                 <marker date="1467789285016" expanded="true" signature="1102:1182" ph="..." />
@@ -100,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Connection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Config/Connection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -418,12 +413,12 @@
       <workItem from="1467698912595" duration="4151000" />
       <workItem from="1467708687102" duration="9744000" />
       <workItem from="1467719925764" duration="13429000" />
-      <workItem from="1467785179059" duration="4414000" />
+      <workItem from="1467785179059" duration="5921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133596000" />
+    <option name="totallyTimeSpent" value="135103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="98" y="47" width="1772" height="1000" extended-state="0" />
@@ -660,22 +655,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="e#76#98#0#PHP" expanded="true" />
-            <marker date="1467789285016" expanded="true" signature="1102:1182" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Config/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding>
+            <element signature="e#76#98#0#PHP" expanded="true" />
+            <marker date="1467789285016" expanded="true" signature="1102:1182" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
