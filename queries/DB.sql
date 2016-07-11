@@ -101,7 +101,7 @@ INSERT INTO `month_payment` (`employee_id`, `payment`, `payment_day_id`) VALUES
 CREATE TABLE IF NOT EXISTS `payment_day` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
-  KEY `id` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы company.payment_day: ~4 rows (приблизительно)
