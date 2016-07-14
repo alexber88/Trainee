@@ -7,7 +7,7 @@
  */
 
 
-namespace Model;
+namespace Orm\Model;
 
 use Orm\OrmAbstract;
 

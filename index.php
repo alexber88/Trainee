@@ -1,26 +1,37 @@
 <?php
 error_reporting(E_ALL | E_STRICT) ;
 ini_set('display_errors', 'On');
+//phpinfo();
+//die;
+//use Config\Connection;
+//use Orm\Model\User;
 
-use Config\Connection;
-use Model\User;
+use System\Router;
 
 //use Logger\LogToDB;
 //use Logger\LogToFile;
-
+define('DS', DIRECTORY_SEPARATOR);
+define('BASE_URL', 'http://loggertest.com');
 require_once 'Autoload.php';
 
 $autoload = new Autoload();
 $autoload->register();
 
+$autoload->addNamespace('System', 'Module'.DS.'System');
+$autoload->addNamespace('App', 'App'.DS.'Controller');
+$autoload->addNamespace('Model', 'App'.DS.'Model');
+
 $autoload->addNamespace('Config', 'Config');
 
-//$autoload->addNamespace('Logger', 'Module/Logger/Core');
+$autoload->addNamespace('Logger', 'Module'.DS.'Logger'.DS.'Core');
 
-$autoload->addNamespace('Model', 'App/New/src/Model');
-$autoload->addNamespace('Orm', 'Module/Orm');
+$autoload->addNamespace('Orm', 'Module'.DS.'Orm');
 
-$connect = new Connection();
+//$connect = new Connection();
+//
+$router = new Router();
+$router->start();
+//$a = new Test();
 
 
 //------------Launch LOGGER-----------------------
@@ -40,8 +51,8 @@ $connect = new Connection();
 //--------------Launch ORM--------------------------
 
 
-$user1 = new User($connect->getConnection());
-$user1->load(29);
+//$user1 = new User($connect->getConnection());
+//$user1->load(29);
 ////
 //
 //$user1->setName('xxxxx');
@@ -54,8 +65,8 @@ $user1->load(29);
 //$user1->save(); // new row added in db.
 //$user1->delete();
 //$user1->save();
-echo $user1->getName().'<br/>';
-echo $user1->getEmail().'<br/>';
+//echo $user1->getName().'<br/>';
+//echo $user1->getEmail().'<br/>';
 //$user1->setName('alex');
 //echo $user1->getName();
 //echo $user1->getEmail();

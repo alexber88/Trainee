@@ -10,8 +10,25 @@
 //{
 //    public static function autoload($class)
 //    {
+//        echo $class;
 //        $class = str_replace('\\', '/', $class);
-//        include $class . '.php';
+//        if(file_exists('App/Controller/'.$class.'.php'))
+//        {
+//            include 'System/Controller.php';
+//            include 'App/Controller/'.$class.'.php';
+//        }
+//        elseif (file_exists('Module/Orm/Model'.$class.'.php'))
+//        {
+//            include 'Module/Orm/Model'.$class.'.php';
+//        }
+//        elseif ($class == 'Config/Connection')
+//        {
+//            include 'Config/Connection.php';
+//        }
+//        elseif($class == 'System/Router')
+//        {
+//            include 'System/Router.php';
+//        }
 //    }
 //}
 //
@@ -80,6 +97,7 @@ class Autoload
      */
     public function loadClass($class)
     {
+        
         // the current namespace prefix
         $prefix = $class;
 
