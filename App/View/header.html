@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/style.css">
 </head>
 <body>
-<?php
-if(isset($_SESSION['id']))
-{
-    ?>
-    <a href="<?php echo BASE_URL ?>/index/logout">Exit</a>
-<?php
-}
-?>
+    <header>
+    <?php
+
+        if(isset($_SESSION['id']))
+        {
+            ?>
+            <a href="<?php echo BASE_URL ?>/index/logout">Exit</a>
+        <?php
+        }
+        ?>
+    </header>
