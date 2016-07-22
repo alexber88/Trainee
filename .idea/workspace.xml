@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/header.html" afterPath="$PROJECT_DIR$/App/View/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/footer.html" afterPath="$PROJECT_DIR$/App/View/footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/layout.html" afterPath="$PROJECT_DIR$/App/View/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module/System/View.php" afterPath="$PROJECT_DIR$/Module/System/View.php" />
     </list>
     <ignored path="loggertest.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pagination.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pagination.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Module/Lib/Pagination.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="634">
@@ -99,6 +98,36 @@
               <folding>
                 <element signature="e#6#84#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/View/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/View/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/View/layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,10 +195,10 @@
         <option value="$PROJECT_DIR$/App/View/Product/list.html" />
         <option value="$PROJECT_DIR$/App/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/Module/Lib/Validation.php" />
-        <option value="$PROJECT_DIR$/App/View/footer.html" />
         <option value="$PROJECT_DIR$/Module/System/View.php" />
         <option value="$PROJECT_DIR$/App/View/header.html" />
         <option value="$PROJECT_DIR$/App/View/layout.html" />
+        <option value="$PROJECT_DIR$/App/View/footer.html" />
       </list>
     </option>
   </component>
@@ -642,7 +671,7 @@
       <workItem from="1469083492648" duration="4015000" />
       <workItem from="1469092124926" duration="8889000" />
       <workItem from="1469101903926" duration="12551000" />
-      <workItem from="1469167437302" duration="16355000" />
+      <workItem from="1469167437302" duration="16486000" />
     </task>
     <servers />
   </component>
@@ -664,7 +693,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312771000" />
+    <option name="totallyTimeSpent" value="312902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
@@ -1050,30 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Module/System/View.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -1089,6 +1094,30 @@
           <folding>
             <element signature="e#6#84#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
