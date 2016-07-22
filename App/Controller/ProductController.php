@@ -58,8 +58,6 @@ class ProductController extends AbstractController
         header('Location: '.BASE_URL.'/product/list');
     }
 
-    
-
     public function listAction()
     {
 

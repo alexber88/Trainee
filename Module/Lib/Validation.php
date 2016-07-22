@@ -58,7 +58,7 @@ class Validation
         {
             return false;
         }
-        $price = (ceil($int*100))/100;
+        $price = (ceil($price*100))/100;
         return true;
 
     }
