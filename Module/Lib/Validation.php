@@ -54,7 +54,7 @@ class Validation
         {
             return false;
         }
-        elseif($price <= 0)
+        elseif($price < 0)
         {
             return false;
         }

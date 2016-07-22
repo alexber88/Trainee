@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/ProductController.php" afterPath="$PROJECT_DIR$/App/Controller/ProductController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module/Lib/Validation.php" afterPath="$PROJECT_DIR$/Module/Lib/Validation.php" />
     </list>
     <ignored path="loggertest.com.iws" />
@@ -52,8 +51,8 @@
       <file leaf-file-name="Validation.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Module/Lib/Validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+            <state relative-caret-position="478">
+              <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
               <folding>
                 <element signature="e#6#84#0#PHP" expanded="true" />
               </folding>
@@ -662,7 +661,7 @@
       <workItem from="1469083492648" duration="4015000" />
       <workItem from="1469092124926" duration="8889000" />
       <workItem from="1469101903926" duration="12551000" />
-      <workItem from="1469167437302" duration="14922000" />
+      <workItem from="1469167437302" duration="14996000" />
     </task>
     <servers />
   </component>
@@ -684,7 +683,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311338000" />
+    <option name="totallyTimeSpent" value="311412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
@@ -1096,8 +1095,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Module/Lib/Validation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+        <state relative-caret-position="478">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
           <folding>
             <element signature="e#6#84#0#PHP" expanded="true" />
           </folding>
