@@ -27,9 +27,18 @@ class Pagination
         }
 
         $html = '<div class="pagination">';
-        if($config['currentPage'] - 1 > 0)
+        $prev = $config['currentPage'] - 1;
+        if($prev > 0)
         {
-            $html .= '<span><a href="'.$requestUri.'page/'.($config['currentPage']-1).'"> &larr; </a></span>';
+            if($prev == 1)
+            {
+                $html .= '<span><a href="'.$requestUri.'"> &larr; </a></span>';
+            }
+            else
+            {
+                $html .= '<span><a href="'.$requestUri.'page/'.($config['currentPage']-1).'"> &larr; </a></span>';
+            }
+
         }
         for($i = 1; $i<=$pageCount; $i++)
         {
