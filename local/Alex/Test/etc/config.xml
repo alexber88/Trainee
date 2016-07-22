@@ -17,4 +17,22 @@
             </test>
         </models>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+        <routers>
+            <test>
+                <use>standard</use>
+                <args>
+                    <module>Alex_Test</module>
+                    <frontName>my_test</frontName>
+                </args>
+            </test>
+        </routers>
+    </frontend>
 </config>

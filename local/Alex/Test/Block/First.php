@@ -10,8 +10,12 @@ class Alex_Test_Block_First extends Mage_Core_Block_Template
 {
     public function getSmth()
     {
-        $arr = [];
         $smth = Mage::getModel('test/first')->getSmth();
         return $smth;
     }
+
+//    public function firstBlockSecondFunction()
+//    {
+//        return $
+//    }
 }

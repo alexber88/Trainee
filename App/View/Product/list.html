@@ -1,1 +1,47 @@
-<?php echo $data ?>
+<?php
+$sort = $data['sort'];
+
+$products = $data['products'];
+$pagination = $data['pagination'];
+?>
+<h1 class="list-title">Product list</h1>
+<div style="text-align: center">
+    <p>
+        Page:
+        <?php
+        echo $pagination;
+        ?>
+    </p>
+    <p>
+        Sort by:
+        <?php
+            foreach($sort as $key => $val)
+        {
+            ?>
+        <span><a href="/product/list/<?php echo $val['href'] ?>"><?php echo ucfirst($key) ?>&nbsp;<?php echo $val['arrow'] ?></a></span>
+            <?php
+        }
+        ?>
+    </p>
+</div>
+<table class="list">
+    <tr>
+        <th >ID</th>
+        <th style="border-bottom: 1px solid black">Name</th>
+        <th style="border-bottom: 1px solid black">Price</th>
+        <th style="border-bottom: 1px solid black">Functions</th>
+    </tr>
+    <?php
+foreach ($products as $product)
+{
+?>
+    <tr>
+        <td><?php echo $product['id'] ?></td>
+        <td><?php echo $product['name']?></td>
+        <td><?php echo $product['price']?></td>
+        <td><a href="<?php echo BASE_URL ?>/product/edit/id/<?php echo $product['id'] ?>">Edit</a></td>
+    </tr>
+<?php
+}
+    ?>
+</table>

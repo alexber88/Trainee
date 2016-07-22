@@ -9,7 +9,7 @@
 namespace Model;
 
 use System\AbstractModel;
-//use Orm\Model\User;
+use Orm\Model\User;
 
 
 class ModelUser extends AbstractModel

@@ -80,6 +80,30 @@ abstract class OrmAbstract implements OrmInterface
         }
     }
 
+    public function __call($name, $argument = null)
+    {
+        $method = substr($name, 0, 3);
+        $fieldName = substr($name, 3);
+        preg_match_all('/[A-Z][^A-Z]*/', $fieldName, $result);
+        $matches = $result[0];
+        $field = implode('_', array_map(function ($val){
+            return strtolower($val);
+        }, $matches));
+
+        if($method == 'get')
+        {
+            if(array_key_exists($field, $this->_data))
+            {
+                return $this->_data[$field];
+            }
+        }
+        elseif ($method == 'set' && count($argument) == 1)
+        {
+            $this->_data[$field] = $argument[0];
+        }
+    }
+
+
     /**
      * Find record in the table by id
      * @param $id int
@@ -163,6 +187,10 @@ abstract class OrmAbstract implements OrmInterface
         {
             $statement->bindParam(':'.$field, $value);
         }
+
         $statement->execute();
+//        $arr = $statement->errorInfo();
+//        print_r($arr);
+//        die;
     }
 }

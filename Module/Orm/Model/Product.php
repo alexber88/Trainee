@@ -11,17 +11,20 @@ namespace Orm\Model;
 
 use Orm\OrmAbstract;
 
-class User extends OrmAbstract
+class Product extends OrmAbstract
 {
 //    protected $_data = [
+//        'entity_id' => '',
+//        'sku' => '',
+//        'description' => '',
 //        'name' => '',
-//        'email' => '',
-//        'add_date' => ''
+//        'regular_price_with_tax' => '',
+//        'is_saleable' => '',
 //    ];
     public function __construct(\PDO $connect)
     {
-        parent::__construct($connect, 'user', 'id');
-        $this->_data['add_date'] = date('Y-m-d H:i:s');
+        parent::__construct($connect, 'product', 'id');
+//        $this->_data['add_date'] = date('Y-m-d H:i:s');
     }
 
     /**

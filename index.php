@@ -6,6 +6,7 @@ ini_set('display_errors', 'On');
 //use Config\Connection;
 //use Orm\Model\User;
 
+
 use System\Router;
 
 //use Logger\LogToDB;
@@ -26,6 +27,7 @@ $autoload->addNamespace('Config', 'Config');
 $autoload->addNamespace('Logger', 'Module'.DS.'Logger'.DS.'Core');
 
 $autoload->addNamespace('Orm', 'Module'.DS.'Orm');
+$autoload->addNamespace('Lib', 'Module'.DS.'Lib');
 
 //$connect = new Connection();
 //

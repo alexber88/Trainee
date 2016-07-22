@@ -1,0 +1,45 @@
+<h1>Edit Product</h1>
+<?php
+$product = $data['product'];
+if(isset($data['errors']))
+{
+    $errors = $data['errors'];
+}
+?>
+<form method="POST" action="<?php echo BASE_URL ?>/product/edit/id/<?php echo $product['id'] ?>">
+    <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+    Name<br/>
+    <?php echo isset($errors['name']) ? '<p class="error">'.$errors['name'].'</p>' : '' ?>
+    <input type="text" name="name" value="<?php echo $product['name'] ?>" size="100">
+    <br/>
+    <br/>
+    SKU<br/>
+    <?php echo isset($errors['sku']) ? '<p class="error">'.$errors['sku'].'</p>' : '' ?>
+    <input type="text" name="sku" value="<?php echo $product['sku'] ?>">
+    <br/>
+    <br/>
+    Status<br/>
+    <?php echo isset($errors['is_saleable']) ? '<p class="error">'.$errors['is_saleable'].'</p>' : '' ?>
+    <select name="is_saleable">
+        <option <?php echo $product['is_saleable'] == 0 ? 'selected' : '' ?> value="0" >Not saleable</option>
+        <option <?php echo $product['is_saleable'] == 1 ? 'selected' : '' ?> value="1"  >Is saleable</option>
+    </select>
+    <br/>
+    <br/>
+    Description<br/>
+    <?php echo isset($errors['description']) ? '<p class="error">'.$errors['description'].'</p>' : '' ?>
+    <textarea cols="75" rows="10" name="description"><?php echo $product['description'] ?></textarea>
+    <br/>
+    <br/>
+    Price<br/>
+    <?php echo isset($errors['price']) ? '<p class="error">'.$errors['price'].'</p>' : '' ?>
+    <input type="text" name="price" value="<?php echo $product['price'] ?>">
+    <br/>
+    <br/>
+    Last imported date<br/>
+    <input type="hidden" name="last_import_date" value="<?php echo $product['last_import_date'] ?>">
+    <input disabled type="text" value="<?php echo $product['last_import_date'] ?>">
+    <br/>
+    <br/>
+    <input type="submit" value="Save product">
+</form>

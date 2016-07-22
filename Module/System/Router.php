@@ -17,7 +17,7 @@ class Router
     {
         $args = [];
 
-        $this->_getController($file, $action, $args);
+        $this->_getController($file, $action, $params);
 
         $className = $file;
 
@@ -27,30 +27,37 @@ class Router
 
         $object->viewFileName = $viewFolder. $action.'.html';
 
+        $action .= 'Action';
+
+        $object->params = $params;
+
         if(is_callable([$object, $action]))
         {
-            call_user_func_array([$object, $action], $args);
+//            call_user_func_array([$object, $action], $params);
+            call_user_func([$object, $action]);
         }
 
 
     }
 
-    private function _getController(&$file, &$action, &$args)
+    private function _getController(&$file, &$action, &$params)
     {
         $this->_path = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 
         $namespace = "\\App\\";
 
-        $class = ucfirst(array_shift($this->_path));
+        $fileName = ucfirst(array_shift($this->_path));
 
-        if(file_exists("App/Controller/$class.php"))
+        $controller = $fileName.'Controller';
+
+        if(file_exists("App/Controller/$controller.php"))
         {
-            $file = $namespace.$class;
-            $this->_viewFolder = $class;
+            $file = $namespace.$controller;
+            $this->_viewFolder = $fileName;
         }
         else
         {
-            $file = $namespace.'Index';
+            $file = $namespace.'IndexController';
             $this->_viewFolder = 'Index';
         }
 
@@ -65,7 +72,7 @@ class Router
 
         if(!empty($this->_path))
         {
-            $args = $this->_path;
+            $params = $this->_path;
         }
 
     }

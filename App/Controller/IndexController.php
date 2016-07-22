@@ -10,10 +10,10 @@ namespace App;
 use System\AbstractController;
 use Model\ModelUser;
 
-class Index extends AbstractController
+class IndexController extends AbstractController
 {
 
-    public function index()
+    public function indexAction()
     {
         if(isset($_SESSION['id']))
         {
@@ -25,7 +25,7 @@ class Index extends AbstractController
         }
     }
     
-    public function login()
+    public function loginAction()
     {
         $email =  $_POST['email'];
         $password = $_POST['password'];
@@ -46,7 +46,7 @@ class Index extends AbstractController
 
     }
 
-    public function logout()
+    public function logoutAction()
     {
         $_SESSION = [];
         session_destroy();
