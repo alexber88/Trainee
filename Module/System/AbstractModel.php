@@ -8,17 +8,14 @@
 
 namespace System;
 
-use Config\Connection;
-
 abstract class AbstractModel
 {
     protected $_connection;
     public function __construct()
     {
-        if(!$this->_connection)
+        if($this->_connection == null)
         {
-            $connect = new Connection();
-            $this->_connection = $connect->getConnection();
+            $this->_connection = Registry::getProperty('db_connect');
         }
     }
 }

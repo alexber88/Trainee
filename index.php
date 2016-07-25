@@ -3,11 +3,13 @@ error_reporting(E_ALL | E_STRICT) ;
 ini_set('display_errors', 'On');
 //phpinfo();
 //die;
-//use Config\Connection;
+use Config\Connection;
 //use Orm\Model\User;
 
 
 use System\Router;
+use System\Registry;
+
 
 //use Logger\LogToDB;
 //use Logger\LogToFile;
@@ -27,10 +29,13 @@ $autoload->addNamespace('Config', 'Config');
 $autoload->addNamespace('Logger', 'Module'.DS.'Logger'.DS.'Core');
 
 $autoload->addNamespace('Orm', 'Module'.DS.'Orm');
-$autoload->addNamespace('Lib', 'Module'.DS.'Lib');
+$autoload->addNamespace('Lib', 'Lib');
 
-//$connect = new Connection();
-//
+$connection = new Connection();
+$db_connect = $connection->getConnection();
+
+Registry::setProperty('db_connect', $db_connect);
+
 $router = new Router();
 $router->start();
 //$a = new Test();
