@@ -1,12 +1,8 @@
 <?php
 error_reporting(E_ALL | E_STRICT) ;
 ini_set('display_errors', 'On');
-//phpinfo();
-//die;
+
 use Config\Connection;
-//use Orm\Model\User;
-
-
 use System\Router;
 use System\Registry;
 
@@ -20,16 +16,20 @@ require_once 'Autoload.php';
 $autoload = new Autoload();
 $autoload->register();
 
-$autoload->addNamespace('System', 'Module'.DS.'System');
-$autoload->addNamespace('App', 'App'.DS.'Controller');
-$autoload->addNamespace('Model', 'App'.DS.'Model');
+$namespaces = [
+    'System' => 'Module'.DS.'System',
+    'App' => 'App'.DS.'Controller',
+    'Model' => 'App'.DS.'Model',
+    'Config' => 'Config',
+    'Logger' => 'Module'.DS.'Logger'.DS.'Core',
+    'Orm' => 'Module'.DS.'Orm',
+    'Lib' => 'Lib'
+];
 
-$autoload->addNamespace('Config', 'Config');
-
-$autoload->addNamespace('Logger', 'Module'.DS.'Logger'.DS.'Core');
-
-$autoload->addNamespace('Orm', 'Module'.DS.'Orm');
-$autoload->addNamespace('Lib', 'Lib');
+foreach ($namespaces as $namespace => $path)
+{
+    $autoload->addNamespace($namespace, $path);
+}
 
 $connection = new Connection();
 $db_connect = $connection->getConnection();
@@ -38,7 +38,7 @@ Registry::setProperty('db_connect', $db_connect);
 
 $router = new Router();
 $router->start();
-//$a = new Test();
+
 
 
 //------------Launch LOGGER-----------------------
