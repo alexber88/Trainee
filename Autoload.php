@@ -68,7 +68,7 @@ class Autoload
      */
     public function loadClass($class)
     {
-        
+
         // the current namespace prefix
         $prefix = $class;
 

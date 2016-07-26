@@ -32,48 +32,15 @@ class Alex_Blog_IndexController extends Mage_Core_Controller_Front_Action
     {
         $customerData = Mage::getSingleton('customer/session');
         $params = $this->getRequest()->getParams();
+
         if(!$customerData->isLoggedIn() || empty($params))
         {
             $this->_redirect('blog');
             return;
         }
 
-        $model = Mage::getModel('blog/post');
-        if(!$params['id'])
-        {
-            $model->setCustomerId($customerData->getCustomer()->getId());
-            $model->setDate(date('Y-m-d H:i:s'));
-        }
-        else
-        {
-            $model->load($params['id']);
-        }
+        Mage::getModel('blog/post')->savePost($params);
 
-        $path = Mage::getBaseDir('media').'/uploads';
-
-        if($img = $model->getImg())
-        {
-            $img = $path.'/'.$img;
-        }
-
-        if ($params['del_img'] && $img)
-        {
-            $model->setImg('');
-            unlink($img);
-        }
-        elseif($name = $_FILES['image']['name'])
-        {
-            if($img)
-            {
-                unlink($img);
-            }
-            $model->setImg($this->_saveImage($name, $path));
-        }
-
-        $model->setTitle($params['title']);
-        $model->setContent($params['content']);
-
-        $model->save();
         $this->_redirect('blog');
         return;
     }
@@ -108,6 +75,7 @@ class Alex_Blog_IndexController extends Mage_Core_Controller_Front_Action
             $this->_redirect('blog');
             return;
         }
+
         Mage::register('post', $post);
 
         $this->loadLayout();
@@ -128,31 +96,17 @@ class Alex_Blog_IndexController extends Mage_Core_Controller_Front_Action
         $customerId = $customerData->getCustomer()->getId();
 
         $model = Mage::getModel('blog/post');
-        $model->load($params['id']);
-        if($img = $model->getImg())
-        {
-            $img = $path = Mage::getBaseDir('media').'/uploads/'.$img;
-            unlink($img);
-        }
-        if($customerId != $model->getCustomerId())
+        $post = $model->getPost($params['id']);
+        if($customerId != $post['customer_id'])
         {
             $this->_redirect('blog');
             return;
         }
-        $model->delete();
+
+        $model->deletePost($params['id']);
+
         $this->_redirect('blog');
         return;
-    }
-
-    private function _saveImage($name, $path)
-    {
-//        chmod($path, 777);
-        $uploader = new Varien_File_Uploader('image');
-        $uploader->setAllowedExtensions(array('jpg', 'jpeg'));
-        $uploader->setAllowRenameFiles(true);
-        $uploader->setFilesDispersion(false);
-        $uploader->save($path, $name);
-        return $uploader->getUploadedFileName();
     }
 
 }

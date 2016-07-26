@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Alex_Blog>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Alex_Blog>
     </modules>
     <global>
@@ -22,6 +22,12 @@
                     <post>
                         <table>blog_posts</table>
                     </post>
+                    <blog_post>
+                        <table>blog_posts_product</table>
+                    </blog_post>
+                    <product>
+                        <table>catalog_product_entity</table>
+                    </product>
                     <customer>
                         <table>customer_entity</table>
                     </customer>

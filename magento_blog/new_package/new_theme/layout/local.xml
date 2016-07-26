@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Store Name
+ * Store URL
+ *
+ * @description  Layout modifications
+ * @author       Author Name
+ * @package      packagename_default
+ *
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <!-- add items just on the homepage -->
+            <!--<action method="addItem"><type>skin_js</type><name>js/libs/home.min.js</name></action>-->
+            <!-- Remove the rwd parent's styles.css file -->
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+
+            <!-- Add it again before your css/myStyle.css file -->
+            <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/local.css</name></action>
+        </reference>
+    </default>
+    <!--<catalog_product_view>-->
+        <!--<reference name="content">-->
+            <!--<block type="test/first" name="test_first" template="test/test.phtml"></block>-->
+        <!--</reference>-->
+    <!--</catalog_product_view>-->
+</layout>

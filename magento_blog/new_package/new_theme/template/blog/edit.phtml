@@ -1,0 +1,45 @@
+<?php
+
+$post = $this->getPost();
+$products = $this->getProducts();
+
+?>
+
+<h3><?php echo $post['title'] ? 'Edit post: '.$post['title'] : '' ?></h3>
+
+<form method="post" action="/blog/index/save/" id="edit-form" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?php echo $post['post_id'] ? $post['post_id'] : 0 ?>">
+    <p>Post title:<br/> <input class="input-text required-entry" type="text" name="title" value="<?php echo $post['title'] ? $post['title'] : '' ?>"></p>
+    <br/>
+    <p>Post content:<br/>  <textarea name="content"><?php echo $post['content'] ? $post['content'] : '' ?></textarea></p>
+    <br/>
+    <?php echo $post['img'] ? '<input type="checkbox" name="del_img" value="1">Delete all images<br/><p>Current image:<br/><img src="'. Mage::getBaseUrl("media").'uploads/'. $post["img"].'"></p>' : '' ?>
+    <p>New image:<br/> <input type="file" name="image"></p>
+    <br/>
+    <p>Select products:<br/>
+        <select name="product[]" multiple size="20">
+            <?php
+            foreach($products as $id => $name)
+            {
+                $selected = false;
+                foreach($post['products'] as $product)
+                {
+                    if($product->getId() == $id)
+                    {
+                        $selected = true;
+                    }
+                }
+                ?>
+            <option value="<?php echo $id ?>" <?php echo $selected ? 'selected' : '' ?>><?php echo $name ?></option>
+                <?php
+            }
+            ?>
+        </select>
+    </p>
+    <br/>
+    <p><input type="submit" value=" Save post "></p>
+</form>
+
+<script type="text/javascript">
+    var customForm = new VarienForm('edit-form');
+</script>

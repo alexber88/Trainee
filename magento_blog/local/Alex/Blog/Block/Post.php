@@ -47,13 +47,30 @@ class Alex_Blog_Block_Post extends Mage_Core_Block_Template
         ksort($sortArr);
 
         $posts = Mage::getModel('blog/post')->getAllPosts($column, $order);
+
         return ['posts'=>$posts, 'sort' => $sortArr];
     }
 
     public function getPost()
     {
+
         $post = Mage::registry('post');
+
         return $post;
+    }
+
+    public function getProducts()
+    {
+        $products = Mage::getModel('blog/post')->getProducts();
+        return $products;
+    }
+
+    public function getLastPosts()
+    {
+
+        $posts = Mage::getModel('blog/post')->getLastPosts();
+
+        return $posts;
     }
 
 }

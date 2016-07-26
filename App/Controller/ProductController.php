@@ -18,7 +18,7 @@ class ProductController extends AbstractController
     private $_column = 'name';
     private $_order = 'asc';
     private $_magentoUrl = 'http://magento1.com';
-    const PER_PAGE = 20;
+    const PER_PAGE = 5;
 
     public function indexAction()
     {
@@ -89,12 +89,12 @@ class ProductController extends AbstractController
             $this->_order = $params['order'];
         }
 
-        $sortArr = $this->_getSortingLinks($this->_column, $this->_order, $columns);
+        $sort = $this->_getSortingLinks($this->_column, $this->_order, $columns);
 
         $products = $model->getListOfProducts($this->_column, $this->_order, self::PER_PAGE, $offset);
 
         $data['products'] = $products;
-        $data['sort'] = $sortArr;
+        $data['sort'] = $sort;
         $data['pagination'] = $pages;
 
         $this->_view->render($this->viewFileName, $data);

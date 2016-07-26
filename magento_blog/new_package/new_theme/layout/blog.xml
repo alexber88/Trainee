@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <blog_index_index>
+        <reference name="content">
+            <block type="blog/post" name="blog_post" template="blog/index.phtml"></block>
+        </reference>
+    </blog_index_index>
+    <blog_index_post>
+        <reference name="content">
+            <block type="blog/post" name="blog_post" template="blog/post.phtml"></block>
+        </reference>
+        <reference name="left">
+            <block type="blog/post" name="last_posts" template="blog/sidebar.phtml"></block>
+        </reference>
+    </blog_index_post>
+    <blog_index_add>
+        <reference name="content">
+            <block type="blog/post" name="blog_post" template="blog/edit.phtml"></block>
+        </reference>
+    </blog_index_add>
+    <blog_index_edit>
+        <reference name="content">
+            <block type="blog/post" name="blog_post" template="blog/edit.phtml"></block>
+        </reference>
+    </blog_index_edit>
+    <!--<test_index_index>-->
+        <!--<reference name="content">-->
+            <!--&lt;!&ndash;<remove name="product.info.addtocart"></remove>&ndash;&gt;-->
+            <!--<block type="test/first" name="test_first" template="test/test.phtml"></block>-->
+            <!--<block type="test/second" name="test_second" template="test/test_second.phtml"></block>-->
+        <!--</reference>-->
+    <!--</test_index_index>-->
+    <!--<test_index_second>-->
+        <!--<reference name="content">-->
+            <!--<block type="test/second" name="test_second" template="test/test_second.phtml"></block>-->
+        <!--</reference>-->
+    <!--</test_index_second>-->
+    <!--<catalog_product_view>-->
+        <!--<reference name="content">-->
+            <!--&lt;!&ndash;<remove name="catalog.product.related"></remove>&ndash;&gt;-->
+            <!--<block type="test/first" name="test_first" template="test/test.phtml"></block>-->
+        <!--</reference>-->
+    <!--</catalog_product_view>-->
+
+</layout>
