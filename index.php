@@ -17,7 +17,7 @@ $autoload = new Autoload();
 $autoload->register();
 
 $namespaces = [
-    'System' => 'Module'.DS.'System',
+    'System' => 'System',
     'App' => 'App'.DS.'Controller',
     'Model' => 'App'.DS.'Model',
     'Config' => 'Config',

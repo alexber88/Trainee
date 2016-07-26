@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/Block/Post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/Model/Post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/Model/Resource/Post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/Model/Resource/Post/Collection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/controllers/IndexController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/etc/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Blog/sql/alex_blog_setup/install-1.0.0.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Test/Block/First.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Test/Block/Second.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Test/Model/First.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Test/controllers/IndexController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/Alex/Test/etc/config.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/AbstractController.php" afterPath="$PROJECT_DIR$/System/AbstractController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/AbstractModel.php" afterPath="$PROJECT_DIR$/System/AbstractModel.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/Registry.php" afterPath="$PROJECT_DIR$/System/Registry.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/Router.php" afterPath="$PROJECT_DIR$/System/Router.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/View.php" afterPath="$PROJECT_DIR$/System/View.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/ProductController.php" afterPath="$PROJECT_DIR$/App/Controller/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Autoload.php" afterPath="$PROJECT_DIR$/Autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="loggertest.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Controller/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+            <state relative-caret-position="95">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
                 <element signature="e#100#130#0#PHP" expanded="true" />
@@ -81,7 +73,7 @@
         </entry>
       </file>
       <file leaf-file-name="AbstractController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module/System/AbstractController.php">
+        <entry file="file://$PROJECT_DIR$/System/AbstractController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
               <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
@@ -104,21 +96,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1349">
-              <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+            <state relative-caret-position="361">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding>
                 <element signature="e#76#98#0#PHP" expanded="true" />
-                <marker date="1469450242957" expanded="true" signature="1494:1574" ph="..." />
+                <marker date="1469527275545" expanded="true" signature="1482:1562" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="View.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module/System/View.php">
+        <entry file="file://$PROJECT_DIR$/System/View.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
@@ -138,7 +130,7 @@
         </entry>
       </file>
       <file leaf-file-name="AbstractModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module/System/AbstractModel.php">
+        <entry file="file://$PROJECT_DIR$/System/AbstractModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
@@ -219,11 +211,11 @@
         <option value="$PROJECT_DIR$/Module/System/AbstractModel.php" />
         <option value="$PROJECT_DIR$/Module/System/Registry.php" />
         <option value="$PROJECT_DIR$/App/Controller/IndexController.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Autoload.php" />
         <option value="$PROJECT_DIR$/Module/System/View.php" />
         <option value="$PROJECT_DIR$/Lib/Pagination.php" />
         <option value="$PROJECT_DIR$/App/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -330,10 +322,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="loggertest.com" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Module" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -581,15 +569,15 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Module/Orm/Model" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Module" />
       <recent name="$PROJECT_DIR$/Module/Orm/Model" />
       <recent name="$PROJECT_DIR$/App/New/src/Model" />
       <recent name="$PROJECT_DIR$/App" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Module/Orm/Model" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.php">
@@ -696,7 +684,7 @@
       <workItem from="1469444911972" duration="936000" />
       <workItem from="1469445876155" duration="14388000" />
       <workItem from="1469513180533" duration="3524000" />
-      <workItem from="1469526882107" duration="74000" />
+      <workItem from="1469526882107" duration="460000" />
     </task>
     <servers />
   </component>
@@ -718,7 +706,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333350000" />
+    <option name="totallyTimeSpent" value="333736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
@@ -904,7 +892,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module/System/Router.php">
+    <entry file="file://$PROJECT_DIR$/System/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
@@ -988,10 +976,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module/System/Registry.php">
+    <entry file="file://$PROJECT_DIR$/System/Registry.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,6 +988,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="121" column="57" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +1006,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module/System/AbstractModel.php">
+    <entry file="file://$PROJECT_DIR$/System/AbstractModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
@@ -1051,7 +1041,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module/System/AbstractController.php">
+    <entry file="file://$PROJECT_DIR$/System/AbstractController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
@@ -1079,18 +1069,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-          <folding>
-            <element signature="e#76#98#0#PHP" expanded="true" />
-            <marker date="1469450242957" expanded="true" signature="1494:1574" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Module/System/View.php">
+    <entry file="file://$PROJECT_DIR$/System/View.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
@@ -1110,11 +1089,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
-          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+        <state relative-caret-position="95">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
             <element signature="e#100#130#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#76#98#0#PHP" expanded="true" />
+            <marker date="1469527275545" expanded="true" signature="1482:1562" ph="..." />
           </folding>
         </state>
       </provider>
