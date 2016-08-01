@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/AbstractController.php" afterPath="$PROJECT_DIR$/System/AbstractController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/AbstractModel.php" afterPath="$PROJECT_DIR$/System/AbstractModel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/Registry.php" afterPath="$PROJECT_DIR$/System/Registry.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/Router.php" afterPath="$PROJECT_DIR$/System/Router.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Module/System/View.php" afterPath="$PROJECT_DIR$/System/View.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-    </list>
+    <list default="true" id="485d7153-1d34-46b2-b8aa-c4aaea5e29d5" name="Default" comment="" />
     <ignored path="loggertest.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -49,9 +41,10 @@
       <file leaf-file-name="ModelProduct.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Model/ModelProduct.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1235">
+            <state relative-caret-position="920">
               <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
               <folding>
+                <element signature="e#103#128#0#PHP" expanded="true" />
                 <marker date="1469174195558" expanded="true" signature="1373:1489" ph="SELECT id, e... product" />
                 <marker date="1469174195558" expanded="true" signature="1728:1766" ph="SELECT COUNT... " />
                 <marker date="1469174195558" expanded="true" signature="5580:5619" ph="SELECT id FR... product" />
@@ -63,9 +56,10 @@
       <file leaf-file-name="ModelUser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Model/ModelUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="228">
               <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
+                <element signature="e#104#129#0#PHP" expanded="true" />
                 <marker date="1469018095172" expanded="true" signature="309:372" ph="SELECT id FR... user" />
               </folding>
             </state>
@@ -96,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            <state relative-caret-position="570">
+              <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
               <folding>
                 <element signature="e#76#98#0#PHP" expanded="true" />
                 <marker date="1469527275545" expanded="true" signature="1482:1562" ph="..." />
@@ -139,12 +133,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="437">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding>
+                <element signature="e#101#131#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -234,7 +230,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="127.0.0.1" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1985" />
+    <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1855" />
     <option name="height" value="1056" />
@@ -684,7 +680,7 @@
       <workItem from="1469444911972" duration="936000" />
       <workItem from="1469445876155" duration="14388000" />
       <workItem from="1469513180533" duration="3524000" />
-      <workItem from="1469526882107" duration="460000" />
+      <workItem from="1469526882107" duration="1865000" />
     </task>
     <servers />
   </component>
@@ -706,10 +702,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333736000" />
+    <option name="totallyTimeSpent" value="335141000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20578602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -749,7 +745,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="24" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1014,30 +1010,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lib/Validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/ModelProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
-          <folding>
-            <marker date="1469174195558" expanded="true" signature="1373:1489" ph="SELECT id, e... product" />
-            <marker date="1469174195558" expanded="true" signature="1728:1766" ph="SELECT COUNT... " />
-            <marker date="1469174195558" expanded="true" signature="5580:5619" ph="SELECT id FR... product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1047,16 +1023,6 @@
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
           <folding>
             <element signature="e#6#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/ModelUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1469018095172" expanded="true" signature="309:372" ph="SELECT id FR... user" />
           </folding>
         </state>
       </provider>
@@ -1100,11 +1066,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        <state relative-caret-position="570">
+          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
           <folding>
             <element signature="e#76#98#0#PHP" expanded="true" />
             <marker date="1469527275545" expanded="true" signature="1482:1562" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/ModelProduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <folding>
+            <element signature="e#103#128#0#PHP" expanded="true" />
+            <marker date="1469174195558" expanded="true" signature="1373:1489" ph="SELECT id, e... product" />
+            <marker date="1469174195558" expanded="true" signature="1728:1766" ph="SELECT COUNT... " />
+            <marker date="1469174195558" expanded="true" signature="5580:5619" ph="SELECT id FR... product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/ModelUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#104#129#0#PHP" expanded="true" />
+            <marker date="1469018095172" expanded="true" signature="309:372" ph="SELECT id FR... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#101#131#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

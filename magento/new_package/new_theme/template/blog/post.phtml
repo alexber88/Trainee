@@ -1,0 +1,50 @@
+<?php
+
+$post = $this->getPost();
+
+
+?>
+
+<h1><?php echo $post['title']; ?></h1>
+<p>Author: <span><?php echo $post['first_name']; ?></span><span> <?php echo $post['last_name']; ?></span></p>
+<p>Create date: <?php echo $post['date']?></p>
+<br/>
+<br/>
+<?php
+if(!empty($post['products']))
+{
+?>
+<div class="post-products">
+<h3>Related products</h3>
+    <?php
+        $productBlock = $this->getLayout()->createBlock('catalog/product_price');
+        foreach ($post['products'] as $product)
+        {
+            ?>
+            <div class="product">
+                <h5><a href="<?php echo Mage::getBaseUrl().$product->getUrlPath() ?>"><?php echo $product->getName() ?></a></h5>
+                <a href="<?php echo Mage::getBaseUrl().$product->getUrlPath() ?>"><img class="post-img" src="<?php echo Mage::getBaseUrl('media') ?>catalog/product<?php echo $product->getImage() ?>"></a>
+                <p><?php echo Mage::helper('core/string')->truncate($product->getShortDescription(), 50)  ?></p>
+                <?php
+                echo $productBlock->getPriceHtml($product, true);
+                ?>
+            </div>
+            <?php
+        }
+    ?>
+    <div class="clear"></div>
+</div>
+<?php
+}
+?>
+
+    <?php
+if($post['img'] != '')
+{
+    ?>
+<img src="<?php echo Mage::getBaseUrl("media"). $post["img"] ?>">
+    <?php
+}
+?>
+<br/>
+<p><?php echo $post['content']; ?></p>

@@ -1,0 +1,67 @@
+<?php
+$data = $this->getAllPosts();
+$sort = $data['sort'];
+$customerData = Mage::getSingleton('customer/session');
+$customerId = $customerData->getCustomer()->getId();
+
+?>
+<h1>All posts</h1>
+
+<?php
+if($customerData->isLoggedIn())
+{
+    ?>
+    <p><b><a href="/blog/index/add/">Add new post</a></b></p>
+    <?php
+}
+
+?>
+
+<br/>
+<br/>
+<div>
+    <div>
+        Sort by:
+        <?php
+        foreach($sort as $key => $val)
+        {
+            ?>
+            <span><a href="/blog/index/index/<?php echo $val['href'] ?>"><?php echo ucfirst($key) ?>&nbsp;<?php echo $val['arrow'] ?></a></span>
+            <?php
+        }
+        ?>
+    </div>
+    <br/>
+    <br/>
+    <?php
+    foreach($data['posts'] as $post){ ?>
+    <div class="post_content">
+        <h3><a href="/blog/index/post/id/<?php echo $post->getPostId(); ?>"><?php echo $post->getTitle() ?></a></h3>
+        <?php
+        if($customerId == $post->getCustomerId())
+        {
+            ?>
+        <span><a href="/blog/index/edit/id/<?php echo $post->getPostId() ?>">Edit</a></span>
+        <span> <a href="/blog/index/delete/id/<?php echo $post->getPostId() ?>">Delete</a></span>
+        <?php
+        }
+        ?>
+        <p>Create date: <?php echo $post->getDate() ?></p>
+        <p><span>Author: <?php echo $post->getFirstName() ?></span><span> <?php echo $post->getLastName() ?></span></p>
+        <p>Email: <?php echo $post->getEmail() ?></p>
+        <?php
+        if($post->getImg())
+        {
+            ?>
+            <img class="small_img" src="<?php echo Mage::getBaseUrl("media"). $post->getImg() ?>">
+            <?php
+        }
+        ?>
+        <p><?php echo Mage::helper('core/string')->truncate($post->getContent(), 50) ?></p><a href="/blog/index/post/id/<?php echo $post->getPostId(); ?>">more...</a>
+        <hr/>
+    </div>
+    <?php
+    }
+
+    ?>
+</div>
