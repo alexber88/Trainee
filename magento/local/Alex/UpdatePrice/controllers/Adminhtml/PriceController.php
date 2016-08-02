@@ -11,6 +11,7 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
     public function massUpdatePriceAction()
     {
         $params = $this->getRequest()->getParams();
+
         $ids = $params['product'];
         $value = str_replace(',', '.', $params['value']);
         $method = $params['method'];
@@ -19,52 +20,28 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
         {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__('Please select product(s)'));
         }
-        elseif (!$value || $value < 0 || !is_numeric($value))
+        elseif (!Mage::helper('alex_updateprice')->checkValue($value))
         {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__('Please enter a valid value'));
         }
         else
         {
-            if(is_callable([$this, $method]))
+            if(Mage::helper('alex_updateprice')->methodExist($method))
             {
-                $model = Mage::getModel('catalog/product');
-                foreach ($ids as $id)
+                $model = Mage::getModel('updateprice/price');
+                $updated = $model->updatePrice($ids, $method, $value);
+                if($updated)
                 {
-                    $product = $model->load($id);
-                    $newPrice = call_user_func([$this, $method], $product->getPrice(), $value);
-                    $product->setPrice($newPrice);
-                    $product->save();
+                    Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('alex_updateprice')->__(
+                        'Total of %d record(s) were updated.', $updated
+                    ));
                 }
-                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('alex_updateprice')->__(
-                    'Total of %d record(s) were updated.', count($ids)
-                ));
+            }
+            else
+            {
+                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__("Method doesn't exist"));
             }
         }
         $this->_redirect('*/catalog_product/index');
-    }
-
-    private function _addition($price, $value)
-    {
-        return $price + $value;
-    }
-
-    private function _subtraction($price, $value)
-    {
-        return $price - $value;
-    }
-
-    private function _addPercent($price, $value)
-    {
-        return $price + round(($price * $value)/100, 2);
-    }
-
-    private function _subtractPercent($price, $value)
-    {
-        return $price - round(($price * $value)/100, 2);
-    }
-
-    private function _multiplication($price, $value)
-    {
-        return $price * $value;
     }
 }

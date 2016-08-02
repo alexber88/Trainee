@@ -11,6 +11,11 @@
                 <class>Alex_ProductsWidget_Block</class>
             </productswidget>
         </blocks>
+        <models>
+            <updateprice>
+                <class>Alex_UpdatePrice_Model</class>
+            </updateprice>
+        </models>
         <helpers>
             <productswidget>
                 <class>Alex_ProductsWidget_Helper</class>

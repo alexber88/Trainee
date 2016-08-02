@@ -33,7 +33,7 @@ class Alex_UpdatePrice_Model_Observer
             {
                 $block->addItem($name, [
                     'label' => $label,
-                    'url' => Mage::app()->getStore()->getUrl('adminhtml/price/massUpdatePrice/', ['method' => '_'.$name]),
+                    'url' => Mage::app()->getStore()->getUrl('adminhtml/price/massUpdatePrice/', ['method' => $name]),
                     'additional' => [
                         'visibility' => $textInput
                     ]

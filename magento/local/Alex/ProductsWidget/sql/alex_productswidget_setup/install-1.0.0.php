@@ -29,10 +29,10 @@ $installer->addAttribute('catalog_product', "is_top", [
     ]
 );
 
-$store = Mage::app()->getStore()->getId();
-
 $products = Mage::getModel("catalog/product")->getCollection()->getAllIds();
 
-Mage::getSingleton('catalog/product_action')->updateAttributes($products, ['is_top' => "0"], $store);
+Mage::getSingleton('catalog/product_action')->updateAttributes($products, ['is_top' => '0'], 0);
+
+//Mage::getModel('catalog/product_action')->updateAttributes($products, ['is_top' => "0"], '0');
 
 $installer->endSetup();
