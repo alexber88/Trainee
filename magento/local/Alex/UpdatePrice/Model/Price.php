@@ -28,7 +28,7 @@ class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
                 }
                 else
                 {
-                    Mage::getSingleton('adminhtml/session')->addError($helper->__('Price can not be negative or null. Product ID: '.$product->getId()));
+                    Mage::throwException($helper->__('Price can not be negative or null. Product ID: '.$product->getId()));
                     return false;
                 }
             }
@@ -37,7 +37,7 @@ class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
         }
         catch(Exception $e)
         {
-            Mage::getSingleton('adminhtml/session')->addException($e, $helper->__('Error during product updating'));
+            Mage::getSingleton('adminhtml/session')->addException($e, $e->getMessage());
         }
 
     }
