@@ -11,25 +11,34 @@ class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
     public function updatePrice($ids, $method, $value)
     {
         $updated = 0;
-        $products = Mage::getModel('catalog/product')
-            ->getCollection()
-            ->addAttributeToSelect('price')
-            ->addFieldToFilter('entity_id', ['in' => $ids]);
-        foreach($products as $product)
+        $helper = Mage::helper('alex_updateprice');
+        try
         {
-            $newPrice = call_user_func([Mage::helper('alex_updateprice'), $method], $product->getPrice(), $value);
-            if(Mage::helper('alex_updateprice')->isPositive($newPrice))
+            $products = Mage::getModel('catalog/product')
+                ->getCollection()
+                ->addAttributeToSelect('price')
+                ->addFieldToFilter('entity_id', ['in' => $ids]);
+            foreach($products as $product)
             {
-                $product->setPrice($newPrice);
-                $updated++;
+                $newPrice = call_user_func([$helper, $method], $product->getPrice(), $value);
+                if($helper->isPositive($newPrice))
+                {
+                    $product->setPrice($newPrice);
+                    $updated++;
+                }
+                else
+                {
+                    Mage::getSingleton('adminhtml/session')->addError($helper->__('Price can not be negative or null. Product ID: '.$product->getId()));
+                    return false;
+                }
             }
-            else
-            {
-                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__('Price can not be negative or null. Product ID: '.$product->getId()));
-                return false;
-            }
+            $products->save();
+            return $updated;
         }
-        $products->save();
-        return $updated;
+        catch(Exception $e)
+        {
+            Mage::getSingleton('adminhtml/session')->addException($e, $helper->__('Error during product updating'));
+        }
+
     }
 }

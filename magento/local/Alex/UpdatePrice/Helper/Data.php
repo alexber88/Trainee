@@ -22,12 +22,12 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function addPercent($price, $value)
     {
-        return $price + round(($price * $value)/100, 2);
+        return $price + ($price * $value)/100;
     }
 
     public function subtractPercent($price, $value)
     {
-        return $price - round(($price * $value)/100, 2);
+        return $price - ($price * $value)/100;
     }
 
     public function multiplication($price, $value)
@@ -39,14 +39,17 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
     {
         if(!$value)
         {
+            Mage::getSingleton('adminhtml/session')->addError($this->__("Value can't be empty or null"));
             return false;
         }
         elseif(!filter_var($value, FILTER_VALIDATE_FLOAT))
         {
+            Mage::getSingleton('adminhtml/session')->addError($this->__("Value should be only numeric or double"));
             return false;
         }
-        elseif($value < 0.01)
+        elseif($value < 0)
         {
+            Mage::getSingleton('adminhtml/session')->addError($this->__("Value should be only positive"));
             return false;
         }
         
@@ -55,11 +58,7 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function isPositive($price)
     {
-        if($price <= 0)
-        {
-            return false;
-        }
-        return true;
+        return $price > 0;
     }
 
     public function methodExist($method)

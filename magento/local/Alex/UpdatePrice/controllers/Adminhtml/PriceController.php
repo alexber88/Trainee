@@ -10,6 +10,7 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
 {
     public function massUpdatePriceAction()
     {
+        $helper = Mage::helper('alex_updateprice');
         $params = $this->getRequest()->getParams();
 
         $ids = $params['product'];
@@ -18,28 +19,24 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
 
         if(empty($ids))
         {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__('Please select product(s)'));
+            Mage::getSingleton('adminhtml/session')->addError($helper->__('Please select product(s)'));
         }
-        elseif (!Mage::helper('alex_updateprice')->checkValue($value))
+        elseif ($helper->checkValue($value))
         {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__('Please enter a valid value'));
-        }
-        else
-        {
-            if(Mage::helper('alex_updateprice')->methodExist($method))
+            if($helper->methodExist($method))
             {
                 $model = Mage::getModel('updateprice/price');
                 $updated = $model->updatePrice($ids, $method, $value);
                 if($updated)
                 {
-                    Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('alex_updateprice')->__(
+                    Mage::getSingleton('adminhtml/session')->addSuccess($helper->__(
                         'Total of %d record(s) were updated.', $updated
                     ));
                 }
             }
             else
             {
-                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('alex_updateprice')->__("Method doesn't exist"));
+                Mage::getSingleton('adminhtml/session')->addError($helper->__("Method doesn't exist"));
             }
         }
         $this->_redirect('*/catalog_product/index');
