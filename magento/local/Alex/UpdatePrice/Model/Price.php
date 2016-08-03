@@ -37,7 +37,7 @@ class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
         }
         catch(Exception $e)
         {
-            Mage::getSingleton('adminhtml/session')->addException($e, $helper->__('Error during product updating'));
+            Mage::getSingleton('adminhtml/session')->addException($e->getMessage());
         }
 
     }
