@@ -25,10 +25,6 @@ class Alex_ShippingCost_Model_Observer
 //        if(get_class($block) == 'Mage_Sales_Block_Order_Totals'
 //            && $block->getRequest()->getControllerName() == 'order')
 //        {
-//            echo '<pre>';
-//            print_r('class '.get_class($block));
-//            echo '</pre>';
-//
 //            $additionalShippingCost = 0;
 //            $params = Mage::app()->getRequest()->getParams();
 //            $orderId = $params['order_id'];
