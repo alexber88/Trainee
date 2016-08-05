@@ -8,11 +8,6 @@
 
 class Alex_ShippingCost_Block_Adminhtml_InvoiceTotals extends Mage_Adminhtml_Block_Sales_Order_Invoice_Totals
 {
-    /**
-     * Initialize order totals array
-     *
-     * @return Mage_Sales_Block_Order_Totals
-     */
     private $_additionalShippingCost = 0;
 
     protected function _initTotals()
@@ -24,9 +19,10 @@ class Alex_ShippingCost_Block_Adminhtml_InvoiceTotals extends Mage_Adminhtml_Blo
             $this->_additionalShippingCost += $item->getAdditionalShippingCost();
         }
 
-        if ($this->_additionalShippingCost != 0) {
+        if ($this->_additionalShippingCost != 0)
+        {
             $this->addTotal(new Varien_Object([
-                'code'      => 'alex_shippingcost',
+                'code'      => 'additional_shipping_cost',
                 'value'     => $this->_additionalShippingCost,
                 'base_value'=> $this->_additionalShippingCost,
                 'label'     => $this->helper('shippingcost')->__('Shipping Cost'),

@@ -50,12 +50,5 @@ class Alex_ShippingCost_Model_Observer
 //            }
 //        }
 //    }
-
-//    public function salesOrderItemCollectionLoadAfter($observer)
-//    {
-//
-////        echo '1111111111';
-////        die;
-//    }
 }
 

@@ -20,9 +20,10 @@ class Alex_ShippingCost_Block_Totals extends Mage_Sales_Block_Order_Totals
             $this->_additionalShippingCost += $item->getAdditionalShippingCost();
         }
 
-        if ($this->_additionalShippingCost != 0) {
+        if ($this->_additionalShippingCost != 0)
+        {
             $this->addTotal(new Varien_Object([
-                'code'      => 'alex_shippingcost',
+                'code'      => 'additional_shipping_cost',
                 'value'     => $this->_additionalShippingCost,
                 'base_value'=> $this->_additionalShippingCost,
                 'label'     => $this->helper('shippingcost')->__('Shipping Cost'),

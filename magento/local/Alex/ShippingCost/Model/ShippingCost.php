@@ -12,7 +12,7 @@ class Alex_ShippingCost_Model_ShippingCost extends Mage_Sales_Model_Quote_Addres
     private $_additionalShippingCost = 0;
     public function __construct()
     {
-        $this->setCode('Alex_ShippingCost');
+        $this->setCode('additional_shipping_cost');
     }
 
     public function collect(Mage_Sales_Model_Quote_Address $address)
@@ -50,10 +50,10 @@ class Alex_ShippingCost_Model_ShippingCost extends Mage_Sales_Model_Quote_Addres
             if ($this->_additionalShippingCost != 0)
             {
                 $address->addTotal(array(
+
                     'code'  => $this->getCode(),
                     'title' => $this->getLabel(),
                     'value' => $this->_additionalShippingCost,
-                    //'sort_order' => Mage::getStoreConfig('sales/totals_sort/additional_shipping_cost')
                 ));
             }
         }
