@@ -2,19 +2,18 @@
 /**
  * Created by PhpStorm.
  * User: aber
- * Date: 29.07.16
- * Time: 15:45
+ * Date: 03.08.16
+ * Time: 15:15
  */
 
 $installer = $this;
 $installer->startSetup();
 
-$installer->addAttribute('catalog_product', "is_top", [
-    'type'       => 'int',
-    'input'      => 'boolean',
-    'label'      => 'Is TOP?',
-    'group' => 'Education',
-    'sort_order' => 999,
+$installer->addAttribute('catalog_product', "additional_shipping_cost", [
+    'type'       => 'decimal',
+    'input'      => 'text',
+    'label'      => 'Additional shipping cost',
+    'group' => 'Additional shipping cost',
     'visible' => 1,
     'required' => 0,
     'user_defined' => 0,
@@ -29,9 +28,5 @@ $installer->addAttribute('catalog_product', "is_top", [
     'global'     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
     ]
 );
-
-$products = Mage::getModel("catalog/product")->getCollection()->getAllIds();
-
-Mage::getSingleton('catalog/product_action')->updateAttributes($products, ['is_top' => "0"], 0);
 
 $installer->endSetup();

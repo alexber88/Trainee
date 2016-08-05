@@ -13,7 +13,6 @@ class Alex_ProductsWidget_Block_Topthree extends Mage_Core_Block_Template implem
 
     protected function _toHtml()
     {
-
         $collection = Mage::getModel('widget/widget_instance')->getCollection()->addFieldToFilter('instance_type', ['eq'=>'productswidget/topthree']);
         $widgetParams = unserialize($collection->getData()[0]['widget_parameters']);
         $this->_title = $widgetParams['page_title'];
