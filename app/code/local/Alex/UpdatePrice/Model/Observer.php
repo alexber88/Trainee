@@ -21,18 +21,12 @@ class Alex_UpdatePrice_Model_Observer
                 'label' => 'Value',
             ];
 
-            $items = [
-                'addition' => 'Add to price',
-                'subtraction' => 'Subtract from price',
-                'addPercent' => 'Add percent to price',
-                'subtractPercent' => 'Subtract percent from price',
-                'multiplication' => 'Multiplicate price',
-            ];
+            $items = Mage::getConfig()->getNode('global/price_mass_action/operations')->asArray();
 
-            foreach($items as $name => $label)
+            foreach($items as $name => $item)
             {
                 $block->addItem($name, [
-                    'label' => $label,
+                    'label' => $item['label'],
                     'url' => Mage::app()->getStore()->getUrl('adminhtml/price/massUpdatePrice/', ['strategy' => $name]),
                     'additional' => [
                         'visibility' => $textInput

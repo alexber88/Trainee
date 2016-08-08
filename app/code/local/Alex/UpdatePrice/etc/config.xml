@@ -15,18 +15,23 @@
             <operations>
                 <addition>
                     <class>Alex_UpdatePrice_Model_UpdateStrategy_Addition</class>
+                    <label>Add to price</label>
                 </addition>
                 <subtraction>
                     <class>Alex_UpdatePrice_Model_UpdateStrategy_Subtraction</class>
+                    <label>Subtract from price</label>
                 </subtraction>
                 <addPercent>
                     <class>Alex_UpdatePrice_Model_UpdateStrategy_AddPercent</class>
+                    <label>Add percent to price</label>
                 </addPercent>
                 <subtractPercent>
                     <class>Alex_UpdatePrice_Model_UpdateStrategy_SubtractPercent</class>
+                    <label>Subtract percent from price</label>
                 </subtractPercent>
                 <multiplication>
                     <class>Alex_UpdatePrice_Model_UpdateStrategy_Multiplication</class>
+                    <label>Multiplicate price</label>
                 </multiplication>
             </operations>
         </price_mass_action>
