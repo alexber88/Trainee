@@ -6,21 +6,25 @@
  * Time: 15:24
  */
 
-class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
+class Alex_UpdatePrice_Model_Price
 {
-    public function updatePrice($ids, $method, $value)
+    protected $_strategy;
+
+    public function __construct(Alex_UpdatePrice_Model_UpdateStrategy_UpdateInterface $strategy)
+    {
+        $this->_strategy = $strategy;
+    }
+
+    public function updatePrice($ids, $value)
     {
         $updated = 0;
         $helper = Mage::helper('alex_updateprice');
+        $products = $this->getProductsCollection($ids);
         try
         {
-            $products = Mage::getModel('catalog/product')
-                ->getCollection()
-                ->addAttributeToSelect('price')
-                ->addFieldToFilter('entity_id', ['in' => $ids]);
             foreach($products as $product)
             {
-                $newPrice = call_user_func([$helper, $method], $product->getPrice(), $value);
+                $newPrice = $this->_strategy->calculateNewPrice($product->getPrice(), $value);
                 if($helper->isPositive($newPrice))
                 {
                     $product->setPrice($newPrice);
@@ -40,5 +44,14 @@ class Alex_UpdatePrice_Model_Price extends Mage_Core_Model_Abstract
             Mage::getSingleton('adminhtml/session')->addException($e, $e->getMessage());
         }
 
+    }
+
+    public function getProductsCollection($ids)
+    {
+        $products = Mage::getModel('catalog/product')
+            ->getCollection()
+            ->addAttributeToSelect('price')
+            ->addFieldToFilter('entity_id', ['in' => $ids]);
+        return $products;
     }
 }

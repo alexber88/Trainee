@@ -13,11 +13,21 @@
         </helpers>
         <price_mass_action>
             <operations>
-                <addition>addition</addition>
-                <subtraction>subtraction</subtraction>
-                <addPercent>addPercent</addPercent>
-                <subtractPercent>subtractPercent</subtractPercent>
-                <multiplication>multiplication</multiplication>
+                <addition>
+                    <class>Alex_UpdatePrice_Model_UpdateStrategy_Addition</class>
+                </addition>
+                <subtraction>
+                    <class>Alex_UpdatePrice_Model_UpdateStrategy_Subtraction</class>
+                </subtraction>
+                <addPercent>
+                    <class>Alex_UpdatePrice_Model_UpdateStrategy_AddPercent</class>
+                </addPercent>
+                <subtractPercent>
+                    <class>Alex_UpdatePrice_Model_UpdateStrategy_SubtractPercent</class>
+                </subtractPercent>
+                <multiplication>
+                    <class>Alex_UpdatePrice_Model_UpdateStrategy_Multiplication</class>
+                </multiplication>
             </operations>
         </price_mass_action>
     </global>

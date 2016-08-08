@@ -15,7 +15,7 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
 
         $ids = $params['product'];
         $value = str_replace(',', '.', $params['value']);
-        $method = $params['method'];
+        $strategy = $params['strategy'];
 
         if(empty($ids))
         {
@@ -23,10 +23,11 @@ class Alex_UpdatePrice_Adminhtml_PriceController extends Mage_Adminhtml_Controll
         }
         elseif ($helper->checkValue($value))
         {
-            if($helper->methodExist($method))
+            if($helper->strategyExist($strategy))
             {
-                $model = Mage::getModel('updateprice/price');
-                $updated = $model->updatePrice($ids, $method, $value);
+                $class = Mage::getConfig()->getNode('global/price_mass_action/operations/'.$strategy.'/class')->asArray();
+                $model = Mage::getModel('updateprice/price', new $class);
+                $updated = $model->updatePrice($ids, $value);
                 if($updated)
                 {
                     Mage::getSingleton('adminhtml/session')->addSuccess($helper->__(

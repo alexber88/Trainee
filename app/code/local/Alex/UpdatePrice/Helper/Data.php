@@ -8,32 +8,6 @@
 
 class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
 {
-
-    public function addition($price, $value)
-    {
-        return $price + $value;
-    }
-
-    public function subtraction($price, $value)
-    {
-        return $price - $value;
-    }
-
-    public function addPercent($price, $value)
-    {
-        return $price + ($price * $value)/100;
-    }
-
-    public function subtractPercent($price, $value)
-    {
-        return $price - ($price * $value)/100;
-    }
-
-    public function multiplication($price, $value)
-    {
-        return $price * $value;
-    }
-
     public function checkValue($value)
     {
         if(!$value)
@@ -60,10 +34,10 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
         return $price > 0;
     }
 
-    public function methodExist($method)
+    public function strategyExist($strategy)
     {
         $operations = Mage::getConfig()->getNode('global/price_mass_action/operations')->asArray();
-        if(is_callable([$this, $method]) && in_array($method, $operations))
+        if(array_key_exists($strategy, $operations))
         {
             return true;
         }
