@@ -25,13 +25,13 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
             Mage::getSingleton('adminhtml/session')->addError($this->__("Value should be only positive"));
             return false;
         }
-        
+
         return true;
     }
 
     public function isPositive($price)
     {
-        return $price > 0;
+        return $price >= 0.01;
     }
 
     public function strategyExist($strategy)
