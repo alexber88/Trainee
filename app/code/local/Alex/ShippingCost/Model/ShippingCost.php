@@ -26,7 +26,7 @@ class Alex_ShippingCost_Model_ShippingCost extends Mage_Sales_Model_Quote_Addres
         $cart = $address->getQuote();
         foreach ($cart->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost()*$item->getQty();
         }
 
         if ($this->_additionalShippingCost)
