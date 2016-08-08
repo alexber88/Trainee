@@ -1,0 +1,21 @@
+<?php
+
+$posts = $this->getLastPosts();
+if(!empty($posts))
+{ ?>
+    <div class="block block-list">
+        <div class="block-title">
+            <strong>
+                <span>Latest posts</span>
+            </strong>
+        </div>
+        <?php
+        foreach ($posts as $post) { ?>
+            <div>
+                <p class="product-name"><a href="/blog/index/post/id/<?php echo $post->getPostId() ?>"><?php echo $post->getTitle() ?></a></p>
+            </div>
+            <?php
+        } ?>
+    </div>
+<?php
+}

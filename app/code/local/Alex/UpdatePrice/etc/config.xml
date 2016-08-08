@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Alex_UpdatePrice>
+            <version>1.0.0</version>
+        </Alex_UpdatePrice>
+    </modules>
+    <global>
+        <helpers>
+            <alex_updateprice>
+                <class>Alex_UpdatePrice_Helper</class>
+            </alex_updateprice>
+        </helpers>
+    </global>
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <alex_core_block_abstract_prepare_layout_before>
+                        <type>singleton</type>
+                        <class>Alex_UpdatePrice_Model_Observer</class>
+                        <method>addMassAction</method>
+                    </alex_core_block_abstract_prepare_layout_before>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <alex_updateprice before="Mage_Adminhtml">Alex_UpdatePrice_Adminhtml</alex_updateprice>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <test_index_hello>
+        <reference name="content">
+            <!--<remove name="product.info.addtocart"></remove>-->
+            <block type="test/first" name="test_first" template="test/test.phtml"></block>
+        </reference>
+    </test_index_hello>
+    <test_index_index>
+        <reference name="content">
+            <!--<remove name="product.info.addtocart"></remove>-->
+            <block type="test/first" name="test_first" template="test/test.phtml"></block>
+            <block type="test/second" name="test_second" template="test/test_second.phtml"></block>
+        </reference>
+    </test_index_index>
+    <test_index_second>
+        <reference name="content">
+            <block type="test/second" name="test_second" template="test/test_second.phtml"></block>
+        </reference>
+    </test_index_second>
+    <catalog_product_view>
+        <reference name="content">
+            <!--<remove name="catalog.product.related"></remove>-->
+            <block type="test/first" name="test_first" template="test/test.phtml"></block>
+        </reference>
+    </catalog_product_view>
+</layout>

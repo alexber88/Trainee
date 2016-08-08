@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="left">
+            <block type="productswidget/topthree" name="products_widget" template="widget/top3widget.phtml" />
+        </reference>
+    </default>
+    <page_two_columns_right>
+        <reference name="right">
+            <block type="productswidget/topthree" name="products_widget" template="widget/top3widget.phtml" />
+        </reference>
+    </page_two_columns_right>
+    <blog_index_index>
+        <reference name="right">
+            <block type="productswidget/topthree" name="products_widget" template="widget/top3widget.phtml" />
+        </reference>
+    </blog_index_index>
+</layout>
