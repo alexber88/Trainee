@@ -11,6 +11,15 @@
                 <class>Alex_UpdatePrice_Helper</class>
             </alex_updateprice>
         </helpers>
+        <price_mass_action>
+            <operations>
+                <addition>addition</addition>
+                <subtraction>subtraction</subtraction>
+                <addPercent>addPercent</addPercent>
+                <subtractPercent>subtractPercent</subtractPercent>
+                <multiplication>multiplication</multiplication>
+            </operations>
+        </price_mass_action>
     </global>
     <adminhtml>
         <events>

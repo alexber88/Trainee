@@ -8,7 +8,6 @@
 
 class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    private $_methods = ['addition', 'subtraction', 'addPercent', 'subtractPercent', 'multiplication'];
 
     public function addition($price, $value)
     {
@@ -63,7 +62,8 @@ class Alex_UpdatePrice_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function methodExist($method)
     {
-        if(is_callable([$this, $method]) && in_array($method, $this->_methods))
+        $operations = Mage::getConfig()->getNode('global/price_mass_action/operations')->asArray();
+        if(is_callable([$this, $method]) && in_array($method, $operations))
         {
             return true;
         }
