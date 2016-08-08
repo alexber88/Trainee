@@ -6,7 +6,7 @@
  * Time: 9:14
  */
 
-class Alex_ShippingCost_Block_Totals extends Mage_Sales_Block_Order_Totals
+class Alex_ShippingCost_Block_CreditmemoTotals extends Mage_Sales_Block_Order_Creditmemo_Totals
 {
     private $_additionalShippingCost = 0;
 
@@ -17,7 +17,7 @@ class Alex_ShippingCost_Block_Totals extends Mage_Sales_Block_Order_Totals
         $order = $this->getOrder();
         foreach ($order->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyOrdered();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyRefunded();
         }
 
         if ($this->_additionalShippingCost != 0)

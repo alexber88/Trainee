@@ -11,6 +11,7 @@
                 <rewrite>
                     <order_totals>Alex_ShippingCost_Block_Totals</order_totals>
                     <order_invoice_totals>Alex_ShippingCost_Block_InvoiceTotals</order_invoice_totals>
+                    <order_creditmemo_totals>Alex_ShippingCost_Block_CreditmemoTotals</order_creditmemo_totals>
                 </rewrite>
             </sales>
             <adminhtml>

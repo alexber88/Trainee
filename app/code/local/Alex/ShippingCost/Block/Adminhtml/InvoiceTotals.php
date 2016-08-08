@@ -16,7 +16,7 @@ class Alex_ShippingCost_Block_Adminhtml_InvoiceTotals extends Mage_Adminhtml_Blo
         $order = $this->getOrder();
         foreach ($order->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyOrdered();
         }
 
         if ($this->_additionalShippingCost != 0)

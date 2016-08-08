@@ -14,7 +14,7 @@ class Alex_ShippingCost_Model_ShippingCostInvoice extends Mage_Sales_Model_Order
         $order = $invoice->getOrder();
         foreach ($order->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyInvoiced();
         }
         if ($this->_additionalShippingCost != 0)
         {

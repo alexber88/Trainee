@@ -17,7 +17,7 @@ class Alex_ShippingCost_Block_Adminhtml_CreditmemoTotals extends Mage_Adminhtml_
         $order = $this->getOrder();
         foreach ($order->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyRefunded();
         }
 
         if ($this->_additionalShippingCost != 0)

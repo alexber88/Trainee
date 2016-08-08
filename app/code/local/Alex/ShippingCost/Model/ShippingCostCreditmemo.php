@@ -14,7 +14,7 @@ class Alex_ShippingCost_Model_ShippingCostCreditmemo extends Mage_Sales_Model_Or
         $order = $creditmemo->getOrder();
         foreach ($order->getAllItems() as $item)
         {
-            $this->_additionalShippingCost += $item->getAdditionalShippingCost();
+            $this->_additionalShippingCost += $item->getAdditionalShippingCost() * $item->getQtyRefunded();
         }
         if ($this->_additionalShippingCost != 0)
         {
