@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Alex_AjaxCart>
+            <version>1.0.0</version>
+        </Alex_AjaxCart>
+    </modules>
+    <global>
+        <blocks>
+            <ajaxcart>
+                <class>Alex_AjaxCart_Block</class>
+            </ajaxcart>
+        </blocks>
+        <helpers>
+            <ajaxcart>
+                <class>Alex_AjaxCart_Helper</class>
+            </ajaxcart>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <ajaxcart>
+                    <file>cart.xml</file>
+                </ajaxcart>
+            </updates>
+        </layout>
+        <routers>
+            <ajaxcart>
+                <use>standard</use>
+                <args>
+                    <module>Alex_AjaxCart</module>
+                    <frontName>ajaxcart</frontName>
+                    <!--<modules>-->
+                        <!--<ajaxcart before="Mage_Checkout">Alex_AjaxCart</ajaxcart>-->
+                    <!--</modules>-->
+                </args>
+            </ajaxcart>
+        </routers>
+    </frontend>
+</config>
