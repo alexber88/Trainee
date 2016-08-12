@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Alex_CategoryTree>
+            <version>1.0.0</version>
+        </Alex_CategoryTree>
+    </modules>
+    <global>
+        <blocks>
+            <categorytree>
+                <class>Alex_CategoryTree_Block</class>
+            </categorytree>
+        </blocks>
+        <models>
+            <categorytree>
+                <class>Alex_CategoryTree_Model</class>
+            </categorytree>
+        </models>
+        <helpers>
+            <categorytree>
+                <class>Alex_CategoryTree_Helper</class>
+            </categorytree>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <categorytree>
+                    <file>tree.xml</file>
+                </categorytree>
+            </updates>
+        </layout>
+    </frontend>
+</config>
