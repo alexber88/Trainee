@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/ajaxcart.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="ajaxcart/cart" name="ajax_cart" template="ajaxcart/cart.phtml"></block>
+        </reference>
+        <reference name="product.info.addtocart">
+            <block type="ajaxcart/cart" name="ajax_loader" template="ajaxcart/loader.phtml"></block>
+        </reference>
+    </catalog_product_view>
+    <catalog_category_default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/ajaxcart.js</name></action>
+        </reference>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/ajaxcart.js</name></action>
+        </reference>
+    </catalog_category_layered>
+</layout>

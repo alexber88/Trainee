@@ -1,0 +1,53 @@
+<script>
+    var productAddToCartForm = new VarienForm('product_addtocart_form');
+    productAddToCartForm.submit = function(button, url) {
+        if (this.validator.validate()) {
+            var form = this.form;
+            var oldUrl = form.action;
+            if (url) {
+                form.action = url;
+            }
+            var e = null;
+            if(!url){
+                url = '/ajaxcart/cart/add';
+            }
+            var data = $j('#product_addtocart_form').serialize();
+            $j('#ajax_loader').show();
+            try {
+                $j.ajax({
+                    url: url,
+                    dataType: 'json',
+                    type : 'post',
+                    data: data,
+                    success: function(data){
+                        $j('#ajax_loader').hide();
+                        if(data.status == 'success')
+                        {
+                            $j('#header-account').html(data.toplink);
+                            $j('.header-minicart').html(data.sidebar);
+                        }
+                        $msgHtml = '<ul class="messages">' +
+                            '<li class="'+data.status+'-msg">' +
+                            '<ul>' +
+                            '<li><span>'+data.msg+'</span></li>' +
+                            '</ul>' +
+                            '</li>' +
+                            '</ul>';
+                        $j('#messages_product_view').html($msgHtml);
+
+                    }
+                });
+            } catch (e) {
+            }
+            this.form.action = oldUrl;
+            if (e) {
+                throw e;
+            }
+
+            if (button && button != 'undefined') {
+                button.disabled = true;
+            }
+        }
+    }.bind(productAddToCartForm);
+
+</script>
