@@ -25,6 +25,9 @@
  */
 ?>
 <?php
+
+$isModuleEnabled = Mage::getConfig()->getModuleConfig('Alex_AjaxCart')->is('active', 'true');
+
 /**
  * Product list template
  *
@@ -87,7 +90,7 @@
                     </div>
                     <div class="product-secondary">
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocationAjax('<?php echo $_product->getId() ?>', '<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+                            <p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="<?php echo $isModuleEnabled ? 'setLocationAjax('. $_product->getId() .', \''.Mage::getSingleton('core/session')->getFormKey().'\')' : 'setLocation(\''.$this->getAddToCartUrl($_product) .'\')'?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <p class="action"><a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
                         <?php else: ?>
@@ -150,7 +153,7 @@
                     <?php endif; ?>
                     <div class="actions">
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocationAjax('<?php echo $_product->getId() ?>', '<?php echo Mage::getSingleton('core/session')->getFormKey();  ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="<?php echo $isModuleEnabled ? 'setLocationAjax('. $_product->getId() .', \''.Mage::getSingleton('core/session')->getFormKey().'\')' : 'setLocation(\''.$this->getAddToCartUrl($_product) .'\')'?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
                         <?php else: ?>
