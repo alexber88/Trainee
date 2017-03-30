@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+    <layout version="0.1.0">
+        <catalog_category_default>
+            <reference name="product_list">
+                <block type="alex_likeicon/like" name="likeicon" template="likeicon/likeicon.phtml" />
+            </reference>
+        </catalog_category_default>
+        <catalog_category_layered>
+            <reference name="product_list">
+                <block type="alex_likeicon/like" name="like.icon" template="likeicon/likeicon.phtml"/>
+            </reference>
+        </catalog_category_layered>
+    </layout>

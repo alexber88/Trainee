@@ -166,6 +166,11 @@ $isModuleEnabled = Mage::getConfig()->getModuleConfig('Alex_AjaxCart')->is('acti
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
                                 <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
                             <?php endif; ?>
+
+<!--                            New code, to add custom block to each product START-->
+                            <?php echo $this->getChild('like.icon')->setProduct($_product)->toHtml(); ?>
+<!--                            New code, to add custom block to each product END-->
+
                         </ul>
                     </div>
                 </div>

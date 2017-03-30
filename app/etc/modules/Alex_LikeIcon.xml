@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Alex_LikeIcon>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Alex_LikeIcon>
+    </modules>
+</config>
