@@ -6,11 +6,28 @@
         </Alex_LikeIcon>
     </modules>
     <global>
+        <models>
+            <alex_likeicon>
+                <class>Alex_LikeIcon_Model</class>
+            </alex_likeicon>
+        </models>
         <blocks>
             <alex_likeicon>
                 <class>Alex_LikeIcon_Block</class>
-            </alex_likeicon>>
+            </alex_likeicon>
+            >
         </blocks>
+        <events>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <alex_likeicon_on_core_block_abscract_to_html_before>
+                        <type>singleton</type>
+                        <class>alex_likeicon/observer</class>
+                        <method>coreBlockAbstractToHtmlBefore</method>
+                    </alex_likeicon_on_core_block_abscract_to_html_before>
+                </observers>
+            </core_block_abstract_to_html_before>
+        </events>
     </global>
     <frontend>
         <layout>
