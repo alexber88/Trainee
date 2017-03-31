@@ -1,7 +1,7 @@
-build/var
-build/media
+var
+media
 .idea
-build/app/etc/local.xml
+app/etc/local.xml
 .hg
 *.pyc
 *.py~
@@ -11,4 +11,4 @@ build/app/etc/local.xml
 *.project
 *.pydevproject
 *.settings/org.eclipse.core.resources.prefs
-build/select
+select
