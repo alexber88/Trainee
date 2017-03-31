@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Alex_ProductsWidget>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Alex_ProductsWidget>
+    </modules>
+</config>

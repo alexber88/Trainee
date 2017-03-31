@@ -1,0 +1,30 @@
+/*.wrapper*/
+/*{*/
+    /*background: #BEBEBE;*/
+/*}*/
+.post_content
+{
+    margin-bottom: 20px;
+}
+
+.small_img
+{
+    width: 300px;
+}
+.post-img
+{
+    height: 135px;
+}
+.product
+{
+    float: left;
+    width: 150px;
+}
+.clear
+{
+    clear: both;
+}
+.post-products
+{
+    margin-bottom: 40px;
+}

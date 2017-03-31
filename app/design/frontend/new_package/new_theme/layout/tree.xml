@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
-        <reference name="left">
+        <reference name="left_first">
             <block type="categorytree/tree" name="category_tree" template="categorytree/tree.phtml"></block>
         </reference>
     </default>

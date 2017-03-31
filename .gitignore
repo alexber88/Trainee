@@ -1,0 +1,14 @@
+build/var
+build/media
+.idea
+build/app/etc/local.xml
+.hg
+*.pyc
+*.py~
+*.swp
+*.xls#
+*.txt~
+*.project
+*.pydevproject
+*.settings/org.eclipse.core.resources.prefs
+build/select
