@@ -4,7 +4,8 @@ media
 app/etc/local.xml
 .hg
 *.pyc
-*.py~
+*.gitignore~
+*.g~
 *.swp
 *.xls#
 *.txt~
@@ -12,3 +13,4 @@ app/etc/local.xml
 *.pydevproject
 *.settings/org.eclipse.core.resources.prefs
 select
+app/code/local/Cgi
